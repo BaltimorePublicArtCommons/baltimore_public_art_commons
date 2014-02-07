@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: baltimore_public_art_commons_development
+  pool: 5
+  username: USERNAME
+  password:
+
+test: &test
+  adapter: postgresql
+  encoding: unicode
+  database: baltimore_public_art_commons_test
+  pool: 5
+  username: USERNAME
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: baltimore_public_art_commons_production
+  pool: 5
+  username: USERNAME
+  password:
+
+cucumber:
+  <<: *test
