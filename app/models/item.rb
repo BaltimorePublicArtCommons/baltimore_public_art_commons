@@ -2,6 +2,7 @@ class Item < ActiveRecord::Base
   has_many :artists
   has_many :images
   has_many :individual_donors
+  has_many :locations
   has_many :organizational_donors
 
   has_one :dimension
