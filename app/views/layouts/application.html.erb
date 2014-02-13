@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BaltimorePublicArtCommons</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <title>Baltimore Public Art Commons</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <% if Rails.env.development? %>
+    <%= stylesheet_link_tag "ggs-js" %>
+    <%= javascript_include_tag "ggs" %>
+  <% end %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <header class='wrapper'>
+    <h1>Baltimore Public Art Commons</h1>
+  </header>
+  <%= yield %>
 </body>
 </html>

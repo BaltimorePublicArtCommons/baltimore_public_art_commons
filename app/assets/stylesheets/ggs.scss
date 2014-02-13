@@ -1,0 +1,74 @@
+$column-width-percentage: 100% / 18;
+$base-font-size: 16px;
+$base-line-height: 24px;
+$gutter-width: 24px;
+
+body {
+  font-size: #{$base-font-size / $base-font-size}em;
+  line-height: #{$base-line-height / $base-font-size}em;
+  background-color: #fff8e7;
+}
+
+h1 {
+  $h1-font-size: 2 * $base-font-size;
+  $h1-line-height: $base-line-height * 1.5;
+  $h1-line-height-overflow: $h1-line-height - $base-line-height;
+
+  font-size: #{$h1-font-size / $base-font-size}em;
+  line-height: #{$h1-line-height / $h1-font-size}em;
+  margin-top: #{$base-line-height / $h1-font-size}em;
+  margin-bottom: #{$h1-line-height / $h1-font-size}em;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  border-bottom: 2px solid #ebab00;
+
+  &:hover {
+    border-bottom: 2px solid #000;
+  }
+}
+
+/*
+*
+*  Simple elastic gutters
+*  Assuming gutter width of 1.5em
+*
+*/
+.wrapper {
+  padding: 0 #{($gutter-width / $base-font-size) / 2}em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+*
+*  Four-column grid active
+*  ----------------------------------------
+*  Margin   | #  1   2   3   4   |   Margin
+*  5.55555% | %  25  50  75  100 | 5.55555%
+*
+*/
+
+body {
+  margin: 0 $column-width-percentage;
+}
+
+p {
+  margin-bottom: #{$base-line-height / $base-font-size}em;
+}
+
+/*
+*
+*  Eight-column grid active
+*  ----------------------------------------------------------------------
+*  Margin   | #  1     2     3     4     5     6     7     8   |   Margin
+*  5.55555% | %  12.5  25.0  37.5  50.0  62.5  75.0  87.5  100 | 5.55555%
+*
+*
+*/
+@media screen and (min-width: #{984px / $base-font-size}em) {
+}
