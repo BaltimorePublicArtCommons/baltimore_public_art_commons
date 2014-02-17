@@ -13,3 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require masonry.pkgd
+//= require imagesloaded.pkgd
+//= require masonry_initializer

@@ -61,6 +61,33 @@ p {
   margin-bottom: #{$base-line-height / $base-font-size}em;
 }
 
+.item {
+  a {
+    display: block;
+    width: 260px;
+  }
+
+  img { display: block; }
+
+  p {
+    padding: 0 .5em;
+    background-color: #ffd77f;
+    margin-bottom: 0;
+  }
+
+  margin-bottom: #{$base-line-height / $base-font-size}em;
+}
+
+.masonry-column-width {
+  width: 100%;
+}
+
+@media screen and (min-width: #{639px / $base-font-size}em) {
+  .masonry-column-width {
+    width: 50%;
+  }
+}
+
 /*
 *
 *  Eight-column grid active
@@ -70,5 +97,14 @@ p {
 *
 *
 */
-@media screen and (min-width: #{984px / $base-font-size}em) {
+@media screen and (min-width: #{957px / $base-font-size}em) {
+  .masonry-column-width {
+    width: 33.3%;
+  }
+}
+
+@media screen and (min-width: #{1278px / $base-font-size}em) {
+  .masonry-column-width {
+    width: 25%;
+  }
 }

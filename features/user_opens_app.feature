@@ -10,6 +10,7 @@ Feature: User opens the app
     Then I should see the about page
 
   Scenario: A user wants to see items
+    Given the app has a few items
     When I open the app
     And I want to see items
     Then I should see items
