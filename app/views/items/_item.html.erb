@@ -1,6 +1,8 @@
 <div class='item wrapper'>
-  <a href='#'>
-    <%= image_tag item.images.first.file %>
+  <a href='<%= item_path(item) %>'>
+    <% if item.images.first %>
+      <%= image_tag item.images.first.file %>
+    <% end %>
     <p><%= item.name %></p>
   </a>
 </div>
