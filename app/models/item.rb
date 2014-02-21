@@ -20,6 +20,16 @@ class Item < ActiveRecord::Base
       item = Item.new(name: i['titleofartwork'],
                       material: i['medium'])
       item.save!
+
+      if loc = i['location']
+        item.locations.create(longitude: loc['longitude'],
+                             latitude: loc['latitude'],
+                             current: true)
+      end
+
+      if i['artistfirstname'] || i['artistlastname']
+
+      end
     end
   end
 end
