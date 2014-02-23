@@ -1,6 +1,6 @@
 <div class='item wrapper'>
-  <a href='#'>
+  <%= link_to item do %>
     <%= image_tag item.images.first.file %>
     <p><%= item.name %></p>
-  </a>
+  <% end %>
 </div>

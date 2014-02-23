@@ -15,9 +15,10 @@ Then(/^I should see the about page$/) do
 end
 
 Given(/^the app has a few items$/) do
-  2.times do
-    item = Item.create! name: 'Test Item'
+  2.times do |index|
+    item = Item.create! name: "Test Item #{index}"
     item.images.create! file: 'stock_item_thumbnail_one.jpg'
+    item.locations.create! neighborhood: 'Fells Point', current: true
   end
 end
 
