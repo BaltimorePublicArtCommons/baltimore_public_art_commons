@@ -4,6 +4,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item_public_data = ItemPublicData.new(Item.find(params[:id]))
   end
 end
