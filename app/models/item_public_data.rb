@@ -35,7 +35,11 @@ class ItemPublicData
   end
 
   def thumbnail_image
-    @item.images.first.file
+    @item.image.url(:thumb)
+  end
+
+  def full_image
+    @item.image.url
   end
 
   private

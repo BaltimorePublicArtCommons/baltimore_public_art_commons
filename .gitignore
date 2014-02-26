@@ -17,3 +17,6 @@
 
 # Ignore developer-dependent files
 config/database.yml
+
+# Ignore imported images
+public/system/items/images

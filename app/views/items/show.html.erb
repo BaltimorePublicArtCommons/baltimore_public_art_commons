@@ -19,7 +19,10 @@
 
     <dt><h3>Artists</h3></dt>
     <% @item_public_data.artists.each do |artist| %>
-      <dd><%= artist %></dd>
+    <dd><%= artist %></dd>
     <% end %>
+
+    <dt><h3>Image</h3></dt>
+    <dd><%= image_tag @item_public_data.full_image %></dd>
   </dl>
 </div>
