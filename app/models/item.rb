@@ -21,8 +21,11 @@ class Item < ActiveRecord::Base
     open(endpoint) do |j|
       JSON.load(j.read)
     end.each do |i|
-      item = Item.new(name: i['titleofartwork'],
-                      material: i['medium'])
+      item = Item.new(
+        name: i['titleofartwork'],
+        material: i['medium'],
+        installation_date: i['dateofartwork']
+      )
       item.save!
 
       if loc = i['location']
