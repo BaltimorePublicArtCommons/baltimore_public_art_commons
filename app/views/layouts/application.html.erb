@@ -14,7 +14,12 @@
 </head>
 <body>
   <header class='wrapper'>
-    <h1>Baltimore Public Art Commons</h1>
+    <h1><%= link_to 'Baltimore Public Art Commons', root_path %></h1>
+    <p>
+      An open source platform to collect and distribute information about
+      Baltimore's public art.
+      <%= link_to 'Click here to find out more.', about_path %>
+    </p>
   </header>
   <%= yield %>
 </body>

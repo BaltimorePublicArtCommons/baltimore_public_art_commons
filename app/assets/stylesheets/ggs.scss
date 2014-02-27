@@ -3,6 +3,10 @@ $base-font-size: 16px;
 $base-line-height: 24px;
 $gutter-width: 24px;
 
+$h1-font-size: 2 * $base-font-size;
+$h1-line-height: $base-line-height * 1.5;
+$h1-line-height-overflow: $h1-line-height - $base-line-height;
+
 body {
   font-size: #{$base-font-size / $base-font-size}em;
   line-height: #{$base-line-height / $base-font-size}em;
@@ -10,10 +14,6 @@ body {
 }
 
 h1 {
-  $h1-font-size: 2 * $base-font-size;
-  $h1-line-height: $base-line-height * 1.5;
-  $h1-line-height-overflow: $h1-line-height - $base-line-height;
-
   font-size: #{$h1-font-size / $base-font-size}em;
   line-height: #{$h1-line-height / $h1-font-size}em;
   margin-top: #{$base-line-height / $h1-font-size}em;
@@ -57,6 +57,10 @@ body {
   margin: 0 $column-width-percentage;
 }
 
+header {
+  h1 { margin-bottom: 0; }
+}
+
 p {
   margin-bottom: #{$base-line-height / $base-font-size}em;
 }
@@ -85,6 +89,14 @@ p {
 dt {
   margin-top: #{$base-line-height / $base-font-size}em;
   &:first-child { margin: 0; }
+}
+
+@media screen and (min-width: #{559px / $base-font-size}em) {
+  header {
+    p {
+      margin-bottom: #{($base-line-height + $h1-line-height-overflow) / $base-font-size}em;
+    }
+  }
 }
 
 @media screen and (min-width: #{639px / $base-font-size}em) {

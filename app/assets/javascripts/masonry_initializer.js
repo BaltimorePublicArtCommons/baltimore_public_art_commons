@@ -5,7 +5,7 @@ $(document).on('ready page:load', function() {
 function initializeMasonry() {
   var container = document.querySelector('#items');
 
-  imagesLoaded(container, function() {
+  $(container).waitForImages(function() {
     var masonry = new Masonry(container, {
       columnWidth: '.masonry-column-width',
       itemSelector: '.item'

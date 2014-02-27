@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require masonry.pkgd
-//= require imagesloaded.pkgd
+//= require jquery.waitforimages
 //= require masonry_initializer
