@@ -10,6 +10,10 @@ class ItemPublicData
     end
   end
 
+  def description
+    @item.material || 'No Value'
+  end
+
   def dimensions
     return 'No Value' if !item_has_dimensions?
     [@item.dimension.height, @item.dimension.width, @item.dimension.depth].
