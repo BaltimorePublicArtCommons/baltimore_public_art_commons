@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209181846) do
+ActiveRecord::Schema.define(version: 20140308205120) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20140209181846) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "item_id"
   end
 
   create_table "dimensions", force: true do |t|
@@ -56,7 +55,21 @@ ActiveRecord::Schema.define(version: 20140209181846) do
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "item_id"
+  end
+
+  create_table "item_artists", force: true do |t|
+    t.integer "item_id"
+    t.integer "artist_id"
+  end
+
+  create_table "item_individual_donors", force: true do |t|
+    t.integer "item_id"
+    t.integer "individual_donor_id"
+  end
+
+  create_table "item_organziation_donors", force: true do |t|
+    t.integer "item_id"
+    t.integer "organization_donor_id"
   end
 
   create_table "items", force: true do |t|
@@ -83,7 +96,14 @@ ActiveRecord::Schema.define(version: 20140209181846) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "item_id"
+  end
+
+  create_table "pg_search_documents", force: true do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

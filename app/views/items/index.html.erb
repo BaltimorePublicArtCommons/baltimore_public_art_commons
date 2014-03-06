@@ -1,3 +1,9 @@
+<% if @query_header %>
+  <div class='wrapper search-query'>
+    <h2><%= @query_header %></h2>
+  </div>
+<% end %>
+
 <div id='items' data-columns>
   <div class='masonry-column-width'></div>
   <%= render @items %>

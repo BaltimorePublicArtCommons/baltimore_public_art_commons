@@ -13,14 +13,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header class='wrapper'>
-    <h1><%= link_to 'Baltimore Public Art Commons', root_path %></h1>
-    <p>
-      An open source platform to collect and distribute information about
-      Baltimore's public art.
-      <%= link_to 'Click here to find out more.', about_path %>
-    </p>
+  <header>
+    <div class='wrapper twoway-split left'>
+      <h1>
+        <%= link_to 'Baltimore Public Art Commons', root_path %>
+      </h1>
+      <p>
+        An open source platform to collect and distribute information about
+        Baltimore's public art.
+        <%= link_to 'Click here to find out more.', about_path %>
+      </p>
+    </div>
+    <div class='wrapper twoway-split right'>
+      <%= form_tag '/items', method: :get do %>
+        <%= search_field_tag 'query' %>
+        <%= button_tag 'Search', name: nil %>
+      <% end %>
+    </div>
   </header>
+  <div style='clear:both'></div>
   <%= yield %>
 </body>
 </html>

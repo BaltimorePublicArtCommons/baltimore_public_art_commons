@@ -11,7 +11,7 @@ class ItemPublicData
   end
 
   def description
-    @item.material || 'No Value'
+    @item.description || 'No Value'
   end
 
   def dimensions

@@ -1,7 +1,7 @@
 When(/^I want to see more information about the first item$/) do
-  click_link 'Test Item 1'
+  click_link 'Test Item 0'
 end
 
-Then(/^I should see information about that item$/) do
-  page.should have_content 'Fells Point'
+Then(/^I should see information about the first item$/) do
+  page.should have_content 'Test Item 0'
 end

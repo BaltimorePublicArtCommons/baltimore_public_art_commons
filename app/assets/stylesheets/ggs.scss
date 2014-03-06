@@ -7,6 +7,10 @@ $h1-font-size: 2 * $base-font-size;
 $h1-line-height: $base-line-height * 1.5;
 $h1-line-height-overflow: $h1-line-height - $base-line-height;
 
+$h2-font-size: 1.5 * $base-font-size;
+$h2-line-height: $base-line-height * 1.5;
+$h2-line-height-overflow: $h2-line-height - $base-line-height;
+
 body {
   font-size: #{$base-font-size / $base-font-size}em;
   line-height: #{$base-line-height / $base-font-size}em;
@@ -20,14 +24,17 @@ h1 {
   margin-bottom: #{$h1-line-height / $h1-font-size}em;
 }
 
+h2 {
+  font-size: #{$h2-font-size / $base-font-size}em;
+  line-height: #{$h2-line-height / $h2-font-size}em;
+}
+
 a {
   text-decoration: none;
   color: #000;
   border-bottom: 2px solid #ebab00;
 
-  &:hover {
-    border-bottom: 2px solid #000;
-  }
+  &:hover { border-bottom: 2px solid #000; }
 }
 
 /*
@@ -59,6 +66,7 @@ body {
 
 header {
   h1 { margin-bottom: 0; }
+  .right { margin-bottom: #{$base-line-height / $base-font-size}em; }
 }
 
 p {
@@ -91,18 +99,22 @@ dt {
   &:first-child { margin: 0; }
 }
 
+div.search-query {
+  h2 { margin-bottom: #{($h2-line-height-overflow) / $h2-font-size}em; }
+}
+
 @media screen and (min-width: #{559px / $base-font-size}em) {
   header {
     p {
-      margin-bottom: #{($base-line-height + $h1-line-height-overflow) / $base-font-size}em;
+      margin-bottom: #{($h1-line-height-overflow) / $base-font-size}em;
     }
   }
 }
 
+.twoway-split { float: left; }
+
 @media screen and (min-width: #{639px / $base-font-size}em) {
-  .masonry-column-width {
-    width: 50%;
-  }
+  .masonry-column-width { width: 50%; }
 }
 
 /*
@@ -115,17 +127,27 @@ dt {
 *
 */
 @media screen and (min-width: #{957px / $base-font-size}em) {
-  .masonry-column-width {
-    width: 33.3%;
-  }
+  .masonry-column-width { width: 33.3%; }
+}
 
-  .twoway-split {
-    float: left;
+@media screen and (min-width: #{1266px / $base-font-size}em) {
+  header {
+    p {
+      margin-bottom: #{($base-line-height + $h1-line-height-overflow) / $base-font-size}em;
+    }
+
+    .right {
+      margin-top: #{$base-line-height / $base-font-size}em;
+      line-height: #{$h1-line-height / $base-font-size}em;
+      float: right;
+
+      button {
+        line-height: #{$base-line-height / $base-font-size}em;
+      }
+    }
   }
 }
 
 @media screen and (min-width: #{1278px / $base-font-size}em) {
-  .masonry-column-width {
-    width: 25%;
-  }
+  .masonry-column-width { width: 25%; }
 }
