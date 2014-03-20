@@ -1,10 +1,9 @@
 class ItemsController < ApplicationController
   def index
     if params[:query]
-      @items = ItemGlobalSearch.new(params[:query]).items
-      @query_header = query_header_for_query(params[:query], @items.present?)
+      search_response
     else
-      @items = Item.all
+      index_response
     end
   end
 
@@ -13,6 +12,17 @@ class ItemsController < ApplicationController
   end
 
   private
+
+  def index_response
+    items = Item.all
+    @items_public_data = items.map { |item| ItemPublicData.new(item) }
+  end
+
+  def search_response
+    items = ItemGlobalSearch.new(params[:query]).items
+    @items_public_data = items.map { |item| ItemPublicData.new(item) }
+    @query_header = query_header_for_query(params[:query], items.present?)
+  end
 
   def query_header_for_query(query, any_search_results)
     if any_search_results

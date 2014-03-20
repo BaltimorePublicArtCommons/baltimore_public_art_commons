@@ -17,3 +17,7 @@
 
 # Ignore developer-dependent files
 config/database.yml
+
+# Ignore local CarrierWave uploads
+public/uploads/**/*
+public/spec/**/*

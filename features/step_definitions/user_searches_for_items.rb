@@ -2,12 +2,12 @@ Given(/^there is an item named "(.*?)" by "(.*?)" in "(.*?)"$/) do |name, artist
   item = Item.create! name: name
 
   artist_first_name, artist_last_name = artist.split(' ')
-  artist = item.artists.create! first_name: artist_first_name,
+  item.artists.create! first_name: artist_first_name,
     last_name: artist_last_name
 
   item.locations.create! neighborhood: neighborhood
 
-  item.images.create! file: 'stock_item_thumbnail_one.jpg'
+  item.images.create!
 end
 
 When(/^I search for "(.*?)"$/) do |query|

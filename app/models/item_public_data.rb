@@ -38,8 +38,17 @@ class ItemPublicData
     @item.name || 'No Value'
   end
 
-  def thumbnail_image
-    @item.images.first.file
+  def path
+    "/items/#{@item.id}"
+  end
+
+  def to_partial_path
+    'items/item_public_data'
+  end
+
+  def small_image
+    return 'not_available.jpg' if !@item.images.any?
+    @item.images.first.small.file
   end
 
   private
