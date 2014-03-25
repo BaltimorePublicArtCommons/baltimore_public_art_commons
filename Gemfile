@@ -1,12 +1,18 @@
 source 'https://rubygems.org'
 
+ruby '2.1.0'
+
+gem 'carrierwave'
+gem 'fog'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
 gem 'pg'
+gem 'pg_search'
 gem 'rails', '4.0.2'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
+gem 'unf'
 
 gem 'paperclip'
 

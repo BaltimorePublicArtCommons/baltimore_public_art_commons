@@ -9,4 +9,5 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-BaltimorePublicArtCommons::Application.config.secret_key_base = ENV['baltimore_public_works_secret_key_base']
+BaltimorePublicArtCommons::Application.config.secret_key_base =
+  ENV['bpac_secret_key_base']

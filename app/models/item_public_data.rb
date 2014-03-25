@@ -10,6 +10,10 @@ class ItemPublicData
     end
   end
 
+  def description
+    @item.description || 'No Value'
+  end
+
   def dimensions
     return 'No Value' if !item_has_dimensions?
     [@item.dimension.height, @item.dimension.width, @item.dimension.depth].
@@ -34,12 +38,17 @@ class ItemPublicData
     @item.name || 'No Value'
   end
 
-  def thumbnail_image
-    @item.image.url(:thumb)
+  def path
+    "/items/#{@item.id}"
   end
 
-  def full_image
-    @item.image.url
+  def to_partial_path
+    'items/item_public_data'
+  end
+
+  def small_image
+    return 'not_available.jpg' if !@item.images.any?
+    @item.images.first.small.file
   end
 
   private

@@ -1,5 +1,5 @@
 <div class='wrapper twoway-split'>
-  <%= image_tag @item_public_data.thumbnail_image %>
+  <%= image_tag @item_public_data.small_image %>
   <h2><%= @item_public_data.name %></h2>
 </div>
 
@@ -8,21 +8,21 @@
     <dt><h3>Neighborhood</h3></dt>
     <dd><%= @item_public_data.neighborhood %></dd>
 
-    <dt><h3>Installation Date</h3></dt>
-    <dd><%= @item_public_data.installation_date %></dd>
-
-    <dt><h3>Dimensions<h3></dt>
-    <dd><%= @item_public_data.dimensions %></dd>
+    <dt><h3>Artists</h3></dt>
+    <% @item_public_data.artists.each do |artist| %>
+      <dd><%= artist %></dd>
+    <% end %>
 
     <dt><h3>Material<h3></dt>
     <dd><%= @item_public_data.material %></dd>
 
-    <dt><h3>Artists</h3></dt>
-    <% @item_public_data.artists.each do |artist| %>
-    <dd><%= artist %></dd>
-    <% end %>
+    <dt><h3>Dimensions<h3></dt>
+    <dd><%= @item_public_data.dimensions %></dd>
 
-    <dt><h3>Image</h3></dt>
-    <dd><%= image_tag @item_public_data.full_image %></dd>
+    <dt><h3>Installation Date</h3></dt>
+    <dd><%= @item_public_data.installation_date %></dd>
+
+    <dt><h3>Description</h3></dt>
+    <dd><%= @item_public_data.description %></dd>
   </dl>
 </div>

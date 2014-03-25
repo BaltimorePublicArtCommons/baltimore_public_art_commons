@@ -1,4 +1,5 @@
 class Artist < ActiveRecord::Base
-  has_many :artists_items
-  has_many :items, through: :artists_items
+  include PgSearch
+
+  multisearchable against: [:first_name, :last_name]
 end
