@@ -10,6 +10,9 @@ CarrierWave::configure do |config|
     }
 
     config.fog_directory = ENV['bpac_aws_bucket']
+
+    # Force HTTP asset URLs instead of HTTPS
+    config.asset_host = "http://#{config.fog_directory}.s3.amazonaws.com"
   else
     config.storage :file
   end
