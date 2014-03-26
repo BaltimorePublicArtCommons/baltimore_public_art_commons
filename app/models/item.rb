@@ -1,5 +1,3 @@
-require 'open-uri'
-
 class Item < ActiveRecord::Base
   include PgSearch
 
