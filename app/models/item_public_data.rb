@@ -48,7 +48,7 @@ class ItemPublicData
 
   def small_image
     return 'not_available.jpg' if !@item.images.any?
-    @item.images.first.small.file
+    @item.images.first.file.small.url
   end
 
   private
