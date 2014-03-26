@@ -1,8 +1,0 @@
-<div class='item wrapper'>
-  <%= link_to item do %>
-    <% if item.image?  %>
-      <%= image_tag item.image.url(:thumb) %>
-    <% end %>
-    <p><%= item.name %></p>
-  <% end %>
-</div>
