@@ -45,8 +45,9 @@ module Importers
       return unless json['image']
       image_url = IMAGE_BASE_URL + json['image']['file_id']
       download_file(json['image']['filename'], image_url) do |file|
-        item.image = file
-        item.save!
+        image = item.images.build
+        image.file = file
+        image.save!
       end
     end
   end
