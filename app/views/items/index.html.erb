@@ -1,10 +1,8 @@
-<% if @query_header %>
-  <div class='wrapper search-query'>
-    <h2><%= @query_header %></h2>
-  </div>
-<% end %>
-
-<div id='items' data-columns>
-  <div class='masonry-column-width'></div>
+<div id='items'>
+  <% if @query_header %>
+    <header class='wrapper'>
+      <h2><%= @query_header %></h2>
+    </header>
+  <% end %>
   <%= render @items_public_data, as: :item_public_data %>
 </div>

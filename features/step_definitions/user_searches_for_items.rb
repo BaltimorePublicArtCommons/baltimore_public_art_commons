@@ -11,8 +11,10 @@ Given(/^there is an item named "(.*?)" by "(.*?)" in "(.*?)"$/) do |name, artist
 end
 
 When(/^I search for "(.*?)"$/) do |query|
-  fill_in 'query', with: query
-  click_button 'Search'
+  within 'header .search-form' do
+    fill_in 'query', with: query
+    click_button ''
+  end
 end
 
 Then(/^I should see "(.*?)" items? that matche?s? name "(.*?)"$/) do |number_of_items, query|

@@ -10,7 +10,7 @@ When(/^I open the app$/) do
 end
 
 When(/^I want to read more about the app$/) do
-  click_link 'Click here to find out more.'
+  click_link 'About Us'
 end
 
 Then(/^I should see the about page$/) do

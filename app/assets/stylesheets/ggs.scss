@@ -11,10 +11,16 @@ $h2-font-size: 1.5 * $base-font-size;
 $h2-line-height: $base-line-height * 1.5;
 $h2-line-height-overflow: $h2-line-height - $base-line-height;
 
+$orange: #F6921E;
+$blue: #28A5C6;
+$grey: #666666;
+
 body {
   font-size: #{$base-font-size / $base-font-size}em;
   line-height: #{$base-line-height / $base-font-size}em;
-  background-color: #fff8e7;
+  font-family: CallunaSans-Regular;
+  font-weight: normal;
+  font-style: normal;
 }
 
 h1 {
@@ -27,14 +33,40 @@ h1 {
 h2 {
   font-size: #{$h2-font-size / $base-font-size}em;
   line-height: #{$h2-line-height / $h2-font-size}em;
+  margin-bottom: #{$h2-line-height-overflow / $h2-font-size}em;
 }
 
 a {
   text-decoration: none;
   color: #000;
-  border-bottom: 2px solid #ebab00;
+  &:hover { text-decoration: underline; }
 
-  &:hover { border-bottom: 2px solid #000; }
+  &.logo { text-decoration: none; }
+}
+
+.orange { color: $orange; }
+
+.blue { color: $blue; }
+
+.search-form {
+  input {
+    float: left;
+    width: #{234px / $base-font-size}em;
+    font-size: 1em;
+    border: 1px solid $blue;
+  }
+
+  button {
+    background: url('/assets/search.png') $blue no-repeat;
+    border: 0 none;
+    height: 1.5em;
+    width: 1.5em;
+    float: right;
+  }
+}
+
+h3, .small-caps {
+  font-variant: small-caps;
 }
 
 /*
@@ -65,8 +97,24 @@ body {
 }
 
 header {
-  h1 { margin-bottom: 0; }
-  .right { margin-bottom: #{$base-line-height / $base-font-size}em; }
+  span {
+    display: inline-block;
+    float: left;
+    clear: left;
+  }
+
+  h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  span:first-child {
+    margin-top: #{$base-line-height / $base-font-size}em;
+  }
+
+  span:last-child {
+    margin-bottom: #{($h1-line-height-overflow) / $base-font-size}em;
+  }
 }
 
 p {
@@ -74,47 +122,36 @@ p {
 }
 
 .item {
-  a {
-    display: block;
-    width: 260px;
-  }
+  background-color: $grey;
+  padding-top: #{0.5 * ($base-line-height / $base-font-size)}em;
+  width: #{260px / $base-font-size}em;
 
-  img { display: block; }
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   p {
-    padding: 0 .5em;
-    background-color: #ffd77f;
-    margin-bottom: 0;
+    margin-top: #{0.5 * ($base-line-height / $base-font-size)}em;
+    margin-left: #{((260px - 235px) / 2) / $base-font-size}em;
+    padding-bottom: #{0.5 * ($base-line-height / $base-font-size)}em;
+    color: white;
   }
 
-  margin-bottom: #{$base-line-height / $base-font-size}em;
+  a { text-decoration: none; }
 }
 
-.masonry-column-width {
-  width: 100%;
-}
+.wrapper { float: left; }
 
 dt {
   margin-top: #{$base-line-height / $base-font-size}em;
   &:first-child { margin: 0; }
 }
 
-div.search-query {
-  h2 { margin-bottom: #{($h2-line-height-overflow) / $h2-font-size}em; }
-}
-
-@media screen and (min-width: #{559px / $base-font-size}em) {
-  header {
-    p {
-      margin-bottom: #{($h1-line-height-overflow) / $base-font-size}em;
-    }
-  }
-}
-
-.twoway-split { float: left; }
-
-@media screen and (min-width: #{639px / $base-font-size}em) {
-  .masonry-column-width { width: 50%; }
+#items header {
+  float: none;
+  margin: 0;
 }
 
 /*
@@ -127,27 +164,22 @@ div.search-query {
 *
 */
 @media screen and (min-width: #{957px / $base-font-size}em) {
-  .masonry-column-width { width: 33.3%; }
-}
-
-@media screen and (min-width: #{1266px / $base-font-size}em) {
   header {
-    p {
+    span:last-child {
       margin-bottom: #{($base-line-height + $h1-line-height-overflow) / $base-font-size}em;
-    }
-
-    .right {
-      margin-top: #{$base-line-height / $base-font-size}em;
-      line-height: #{$h1-line-height / $base-font-size}em;
-      float: right;
-
-      button {
-        line-height: #{$base-line-height / $base-font-size}em;
-      }
     }
   }
 }
 
-@media screen and (min-width: #{1278px / $base-font-size}em) {
-  .masonry-column-width { width: 25%; }
+@media screen and (min-width: #{959px / $base-font-size}em) {
+  header span.search-form {
+    float: right;
+    clear: none;
+  }
+}
+
+@media screen and (min-width: #{1300px / $base-font-size}em) {
+  header, article, #items {
+    margin: 0 $column-width-percentage * 1;
+  }
 }

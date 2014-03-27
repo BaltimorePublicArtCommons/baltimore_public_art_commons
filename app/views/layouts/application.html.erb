@@ -14,22 +14,25 @@
 </head>
 <body>
   <header>
-    <div class='wrapper twoway-split left'>
-      <h1>
-        <%= link_to 'Baltimore Public Art Commons', root_path %>
-      </h1>
-      <p>
-        An open source platform to collect and distribute information about
-        Baltimore's public art.
-        <%= link_to 'Click here to find out more.', about_path %>
-      </p>
-    </div>
-    <div class='wrapper twoway-split right'>
-      <%= form_tag '/items', method: :get do %>
-        <%= search_field_tag 'query' %>
-        <%= button_tag 'Search', name: nil %>
+    <span class='wrapper'>
+      <%= link_to root_path, class: 'logo' do %>
+        <h1 class='orange'>Baltimore</h1>
+        <h1 class='blue'>Public Art</h1>
+        <h1 class='orange'>Commons</h1>
       <% end %>
-    </div>
+    </span>
+    <span class='wrapper small-caps'>
+      <%= link_to 'Neighborhoods', '#' %> |
+      <%= link_to 'Artists', '#' %> |
+      <%= link_to 'Genres', '#' %> |
+      <%= link_to 'About Us', about_path %>
+    </span>
+    <span class='wrapper search-form'>
+      <%= form_tag '/items', method: :get do %>
+        <%= search_field_tag 'query', params[:query], placeholder: 'Search the Collection...' %>
+        <%= button_tag '', name: nil %>
+      <% end %>
+    </span>
   </header>
   <div style='clear:both'></div>
   <%= yield %>
