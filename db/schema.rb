@@ -52,10 +52,10 @@ ActiveRecord::Schema.define(version: 20140319014003) do
   end
 
   create_table "images", force: true do |t|
+    t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "item_id"
-    t.string   "file"
   end
 
   create_table "individual_donors", force: true do |t|
@@ -84,7 +84,7 @@ ActiveRecord::Schema.define(version: 20140319014003) do
     t.string   "name"
     t.string   "material"
     t.string   "description"
-    t.integer  "installation_date"
+    t.string   "installation_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

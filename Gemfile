@@ -14,6 +14,8 @@ gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'unf'
 
+gem 'mini_magick'
+
 group :doc do
   gem 'sdoc', require: false
 end

@@ -1,6 +1,8 @@
 # encoding: utf-8
 
 class ImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+
   def extension_white_list
     %w(jpg jpeg gif png)
   end
@@ -17,6 +19,10 @@ class ImageUploader < CarrierWave::Uploader::Base
     end
   end
 
+  version :small do
+    process :resize_to_fill => [260,260]
+  end
+  
   private
 
   def basic_store_dir
