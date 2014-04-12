@@ -1,3 +1,5 @@
+//= depend_on_asset 'search.png'
+
 $column-width-percentage: 100% / 18;
 $base-font-size: 16px;
 $base-line-height: 24px;
@@ -57,7 +59,7 @@ a {
   }
 
   button {
-    background: url('/assets/search.png') $blue no-repeat;
+    background: image-url('search.png') $blue no-repeat;
     border: 0 none;
     height: 1.5em;
     width: 1.5em;

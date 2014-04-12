@@ -20,6 +20,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'sprockets_better_errors'
 end
 
 group :test do

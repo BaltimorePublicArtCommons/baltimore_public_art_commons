@@ -27,5 +27,8 @@ module BaltimorePublicArtCommons
 
     # Skip locale validation because locales are not currently used
     config.i18n.enforce_available_locales = false
+
+    # Add fonts from vendor/fonts to asset precompile list
+    config.assets.precompile += %w( *.eot *.ttf *.woff )
   end
 end
