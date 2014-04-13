@@ -7,7 +7,7 @@ class Item < ActiveRecord::Base
   has_many :item_individual_donors
   has_many :individual_donors, through: :item_individual_donors
 
-  has_many :item_organization_donors
+  has_many :item_organizational_donors
   has_many :organizational_donors, through: :item_organizational_donors
 
   has_many :images
