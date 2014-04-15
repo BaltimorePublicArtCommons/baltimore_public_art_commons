@@ -13,8 +13,11 @@ class Item < ActiveRecord::Base
   has_many :images
   has_many :locations
 
-  has_one :dimension
   has_one :fabrication
 
   multisearchable against: [:name, :material, :description]
+
+  def dimensions
+    Dimensions.new(height: height, width: width, depth: depth)
+  end
 end

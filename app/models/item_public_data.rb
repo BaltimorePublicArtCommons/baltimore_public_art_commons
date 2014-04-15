@@ -15,10 +15,8 @@ class ItemPublicData
   end
 
   def dimensions
-    return 'No Value' if !item_has_dimensions?
-    [@item.dimension.height, @item.dimension.width, @item.dimension.depth].
-    compact.
-    join(' x ')
+    return 'No Value' if @item.dimensions.empty?
+    @item.dimensions
   end
 
   def installation_date
@@ -49,12 +47,5 @@ class ItemPublicData
   def small_image
     return 'not_available.jpg' if !@item.images.any?
     @item.images.first.small.file
-  end
-
-  private
-
-  def item_has_dimensions?
-    return false if @item.dimension.blank?
-    @item.dimension.height || @item.dimension.width || @item.dimension.depth
   end
 end
