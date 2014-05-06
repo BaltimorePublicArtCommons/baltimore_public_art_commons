@@ -21,8 +21,15 @@ class ItemPublicData
 
   def installation_date
     date = ''
-    date += @item.installation_start_date.to_s if @item.installation_start_date
-    date += " - #{@item.installation_end_date}" if @item.installation_end_date
+
+    if !@item.installation_start_date.value.zero?
+      date += @item.installation_start_date.to_s(:long).gsub(',', ' ')
+
+      if !@item.installation_end_date.value.zero?
+        date += " - #{@item.installation_end_date.to_s(:long).gsub(',', ' ')}"
+      end
+    end
+
     date.blank? ? 'No Value' : date
   end
 

@@ -20,4 +20,12 @@ class Item < ActiveRecord::Base
   def dimensions
     Dimensions.new(height: height, width: width, depth: depth)
   end
+
+  def installation_start_date
+    PartialDateLoader.load(self, :installation_start_date)
+  end
+
+  def installation_end_date
+    PartialDateLoader.load(self, :installation_end_date)
+  end
 end
