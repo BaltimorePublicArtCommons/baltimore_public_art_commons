@@ -15,7 +15,7 @@ class Item < ActiveRecord::Base
 
   has_one :fabrication
 
-  multisearchable against: [:name, :material, :description]
+  multisearchable against: [:name, :material, :genre]
 
   def dimensions
     Dimensions.new(height: height, width: width, depth: depth)

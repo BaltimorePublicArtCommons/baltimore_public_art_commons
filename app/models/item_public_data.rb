@@ -10,8 +10,8 @@ class ItemPublicData
     end
   end
 
-  def description
-    @item.description || 'No Value'
+  def genre
+    @item.genre || 'No Value'
   end
 
   def dimensions
