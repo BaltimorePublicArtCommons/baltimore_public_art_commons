@@ -20,7 +20,10 @@ class ItemPublicData
   end
 
   def installation_date
-    @item.installation_date || 'No Value'
+    date = ''
+    date += @item.installation_start_date.to_s if @item.installation_start_date
+    date += " - #{@item.installation_end_date}" if @item.installation_end_date
+    date.blank? ? 'No Value' : date
   end
 
   def material
