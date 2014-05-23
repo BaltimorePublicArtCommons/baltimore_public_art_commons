@@ -1,5 +1,6 @@
 <article>
-  <%= render @item_public_data, as: :item_public_data %>
+  <%= render partial: 'tile',
+    locals: { item_public_data: @item_public_data, context: :show } %>
 
   <div class='wrapper'>
     <dl>

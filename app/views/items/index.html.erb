@@ -4,5 +4,10 @@
       <h2><%= @query_header %></h2>
     </header>
   <% end %>
-  <%= render @items_public_data, as: :item_public_data %>
+
+  <%= render partial: 'tile',
+    collection: @items_public_data,
+    as: :item_public_data,
+    locals: { context: :index }
+  %>
 </div>

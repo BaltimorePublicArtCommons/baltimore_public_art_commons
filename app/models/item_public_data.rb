@@ -35,8 +35,14 @@ class ItemPublicData
     @item.locations.current.neighborhood
   end
 
-  def name
-    @item.name || 'No Value'
+  def name(context)
+    return 'No Value' if @item.name.blank?
+
+    if context == :index && @item.name.length > 30
+      @item.name[0..30] + '...'
+    else
+      @item.name
+    end
   end
 
   def path
