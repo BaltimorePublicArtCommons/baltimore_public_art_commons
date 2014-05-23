@@ -45,12 +45,12 @@ class ItemPublicData
     end
   end
 
-  def path
-    "/items/#{@item.id}"
-  end
-
-  def to_partial_path
-    'items/item_public_data'
+  def path(context)
+    if context == :show
+      @item.images.first.file.url
+    else
+      "/items/#{@item.id}"
+    end
   end
 
   def small_image
