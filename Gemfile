@@ -22,6 +22,8 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'sprockets_better_errors'
+  gem 'travis-lint'
+  gem 'rake'
 end
 
 group :test do
