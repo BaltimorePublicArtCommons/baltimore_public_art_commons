@@ -2,6 +2,8 @@
 
 [![Build Status] (https://travis-ci.org/BaltimorePublicArtCommons/baltimore_public_art_commons.svg?branch=master)]
 (https://travis-ci.org/BaltimorePublicArtCommons/baltimore_public_art_commons)
+[![Code Climate](https://codeclimate.com/github/BaltimorePublicArtCommons/baltimore_public_art_commons.png)]
+(https://codeclimate.com/github/BaltimorePublicArtCommons/baltimore_public_art_commons)
 
 Baltimore Public Art Commons is an open source platform to collect and
 distribute information about public art and monuments throughout Charm City.
