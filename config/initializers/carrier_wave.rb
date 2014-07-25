@@ -4,12 +4,12 @@ CarrierWave::configure do |config|
 
     config.fog_credentials = {
       provider: 'AWS',
-      aws_access_key_id: ENV['bpac_dev_aws_access_key'],
-      aws_secret_access_key: ENV['bpac_dev_aws_secret_access_key'],
+      aws_access_key_id: ENV['aws_access_key'],
+      aws_secret_access_key: ENV['aws_secret_access_key'],
       path_style: true
     }
 
-    config.fog_directory = ENV['bpac_aws_bucket']
+    config.fog_directory = ENV['s3_bucket_name']
 
     # Force HTTP asset URLs instead of HTTPS
     config.asset_host = "http://#{config.fog_directory}.s3.amazonaws.com"
