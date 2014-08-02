@@ -15,25 +15,45 @@ your system is configured to run Ruby, Rails, and its dependencies.
 
   1. Clone the project
 
-  `git clone git@github.com:BaltimorePublicArtCommons/baltimore_public_art_commons.git`
+    `git clone git@github.com:BaltimorePublicArtCommons/baltimore_public_art_commons.git`
+  
+  2. Navigate to the project directory
+  
+    `cd baltimore_public_art_commons`
 
-  2. Install gems
+  3. Install gems
 
   `bundle install`
 
-  3. Copy database config
+    *You will need to use the same version of Ruby as the project. The project's Ruby version is defined in the `.ruby-version` file.*
+    
+    *The install will fail if you don't have Postgres installed and running.*
 
-  `cp config/database.yml-example config/database.yml`
+  4. Copy database config
 
-  *Make sure you enter your database credentials*
+    `cp config/database.yml-example config/database.yml`
 
-  4. Setup databases
+  and update the file with your database credentials.
 
-  ```
-  rake db:create:all
-  rake db:migrate
-  rake db:test:prepare
-  ```
+  5. Setup databases
+
+    ```
+    rake db:create:all
+    rake db:migrate
+    rake db:test:prepare
+    ```
+    
+    Optionally, load seed data.
+    
+    `rake db:seed`
+    
+  6. Set the application's secret_key_base
+  
+    From the command line, run `rake secret`. Then, copy the string output and set it as an environment variable called `bpac_secret_key_base`.
+  
+  7. Start the app!
+  
+    `rails s`
 
 ## Contributing
 
