@@ -54,7 +54,9 @@ class ItemPublicData
 
   def path(context)
     if context == :show
-      @item.images.first.file.url
+      if @item.images.any?
+        @item.images.first.file.url
+      end
     else
       "/items/#{@item.id}"
     end
