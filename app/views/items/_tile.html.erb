@@ -1,9 +1,14 @@
 <div class='wrapper'>
   <div class='item'>
+  <% if item_public_data.path(context).present? %>
     <%= link_to item_public_data.path(context) do %>
       <%= image_tag item_public_data.small_image %>
       <p><%= item_public_data.name(context) %></p>
     <% end %>
+  <% else %>
+    <%= image_tag item_public_data.small_image %>
+    <p><%= item_public_data.name(context) %></p>
+  <% end %>
   </div>
 </div>
    
