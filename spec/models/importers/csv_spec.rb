@@ -14,6 +14,19 @@ describe Importers::Csv do
         Item.where(name: ['Baltimore Uproar', 'Colossus I']).count.should == 2
       end
 
+      context 'when .import is run again' do
+        before do
+          Importers::Csv.import(
+            'spec/fixtures/simple_sample_data.csv',
+            'app/assets/images'
+          )
+        end
+
+        it 'does not create multiple associations' do
+          expect(Item.find_by_name('Baltimore Uproar').artists.count).to eq(1)
+        end
+      end
+
       context 'imported items' do
         let(:item_one) { Item.find_by_name('Baltimore Uproar') }
         let(:item_two) { Item.find_by_name('Colossus I') }
@@ -110,6 +123,21 @@ describe Importers::Csv do
       it 'should not create empty associations' do
         item = Item.find_by_name('Baltimore Uproar')
         item.organizational_donors.should_not be_any
+      end
+    end
+
+    context 'when a column does not exist as an attribute on the model' do
+      before do
+        # Artist Bio is a column for Artist, but it does not exist as an
+        # attribute on the artists table
+        Importers::Csv.import(
+          'spec/fixtures/column_not_model_attribute_sample_data.csv'
+        )
+      end
+
+      it 'should create all items defined in the CSV file, ignoring unknown attributes' do
+        expect(Item.where(name: ['Baltimore Uproar', 'Colossus I']).count).
+          to(eq(2))
       end
     end
   end

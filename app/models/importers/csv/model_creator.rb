@@ -11,14 +11,14 @@ module Importers
       if unique_attrs
         find_or_create_model(model_name, attrs, unique_attrs)
       else
-        model_name.camelize.constantize.create!(attrs)
+        model_name_to_constant(model_name).create!(attrs)
       end
     end
 
     private
 
     def find_or_create_model(model_name, attrs, unique_attrs)
-      model = model_name.camelize.constantize.find_or_create_by!(
+      model = model_name_to_constant(model_name).find_or_create_by!(
         attrs.select { |k,v| unique_attrs && unique_attrs.include?(k) }
       )
 
@@ -30,7 +30,14 @@ module Importers
       row.to_h.
         select { |k,v| k =~ /\[#{model_name}\]/ }.
         transform_keys { |k| k.gsub("[#{model_name}]", '') }.
-        reject { |k,v| v.nil? }
+        reject { |k,v| v.nil? }.
+        reject { |k,v|
+          !model_name_to_constant(model_name).column_names.include?(k)
+        }
+    end
+
+    def model_name_to_constant(model_name)
+      model_name.camelize.constantize
     end
   end
 end

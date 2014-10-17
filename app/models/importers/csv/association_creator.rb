@@ -39,7 +39,9 @@ module Importers
 
     def associate_new_model_with_item(new_model, association, item)
       if association.is_has_many_for_item?(item)
-        item.send(association.name) << new_model
+        if !item.send(association.name).pluck(:id).include?(new_model.id)
+          item.send(association.name) << new_model
+        end
       else
         new_model.update_attributes(item_id: item.id)
       end
