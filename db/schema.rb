@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140526014654) do
+ActiveRecord::Schema.define(version: 20141023155334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 20140526014654) do
   end
 
   create_table "images", force: true do |t|
+    t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "item_id"
-    t.string   "file"
   end
 
   create_table "individual_donors", force: true do |t|
@@ -109,6 +109,15 @@ ActiveRecord::Schema.define(version: 20140526014654) do
     t.text     "content"
     t.integer  "searchable_id"
     t.string   "searchable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

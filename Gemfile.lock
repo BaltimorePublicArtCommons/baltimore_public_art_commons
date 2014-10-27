@@ -27,6 +27,7 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     atomic (1.1.14)
+    bcrypt (3.1.9)
     builder (3.1.4)
     capybara (2.2.1)
       mime-types (>= 1.16)
@@ -190,6 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   carrierwave
   cucumber-rails
   database_cleaner
