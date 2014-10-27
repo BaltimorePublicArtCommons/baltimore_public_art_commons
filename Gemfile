@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.0'
 
+gem 'bcrypt-ruby'
 gem 'carrierwave'
 gem 'fog'
 gem 'jbuilder', '~> 1.2'

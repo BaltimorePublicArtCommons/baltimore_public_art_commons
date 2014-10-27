@@ -1,0 +1,19 @@
+<article>
+  <section class='wrapper'>
+  <h1>Login</h1>
+
+  <%= flash.alert %>
+
+  <%= form_tag sessions_path, method: :post do %>
+    <div class="field">
+      <%= label_tag :email %>
+      <%= text_field_tag :email %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+      <%= submit_tag "Login" %>
+  <% end %>
+  </section>
+</article>
