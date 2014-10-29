@@ -14,14 +14,16 @@ class ItemsController < ApplicationController
   private
 
   def index_response
-    items = Item.all
-    @items_public_data = items.map { |item| ItemPublicData.new(item) }
+    @items = Item.all.paginate(page: params[:page],
+                               per_page: (params[:per_page] || 12))
+    @items_public_data = @items.map { |item| ItemPublicData.new(item) }
   end
 
   def search_response
-    items = ItemGlobalSearch.new(params[:query]).items
-    @items_public_data = items.map { |item| ItemPublicData.new(item) }
-    @query_header = query_header_for_query(params[:query], items.present?)
+    @items = ItemGlobalSearch.new(params[:query]).items.paginate(page: params[:page],
+                                                                 per_page: (params[:per_page] || 12))
+    @items_public_data = @items.map { |item| ItemPublicData.new(item) }
+    @query_header = query_header_for_query(params[:query], @items.present?)
   end
 
   def query_header_for_query(query, any_search_results)

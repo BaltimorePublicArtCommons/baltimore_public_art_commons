@@ -74,6 +74,14 @@ a {
   }
 }
 
+.pagination {
+  padding: 0 #{($gutter-width / $base-font-size) / 2}em;
+  margin: 10px 0;
+  .current {
+    color: $orange;
+  }
+}
+
 h3, .small-caps {
   font-variant: small-caps;
 }
