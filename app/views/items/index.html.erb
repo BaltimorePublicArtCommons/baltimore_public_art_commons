@@ -5,6 +5,8 @@
     </header>
   <% end %>
 
+  <%= will_paginate @items %>
+
   <%= render partial: 'tile',
     collection: @items_public_data,
     as: :item_public_data,
