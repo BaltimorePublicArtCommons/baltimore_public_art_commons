@@ -1,5 +1,5 @@
-Given(/^there is a user with email "(.*?)" and password "(.*?)"$/) do |email, password|
-  User.create!(email: email, password: password, password_confirmation: password)
+Given(/^there is a user with email "(.*?)", password "(.*?)" and first_name "(.*?)"$/) do |email, password, name|
+  User.create!(email: email, password: password, password_confirmation: password, first_name: name)
 end
 
 When(/^I login as "(.*?)" with password "(.*?)"$/) do |user_email, password|
@@ -18,4 +18,8 @@ end
 
 Then(/^I should see an alert on the login page$/) do
   expect(page).to have_content('invalid')
+end
+
+Then(/^see my first_name "(.*?)" in the secodary header$/) do |name|
+  expect(page).to have_content('Logged in as ' + name)
 end
