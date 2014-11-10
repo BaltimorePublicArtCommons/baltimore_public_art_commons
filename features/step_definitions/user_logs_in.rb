@@ -1,20 +1,21 @@
-Given(/^that a user exists$/) do
-  User.create!(email: 'foo@bar.com', password: 'foobar', password_confirmation: 'foobar')
+Given(/^there is a user with email "(.*?)" and password "(.*?)"$/) do |email, password|
+  User.create!(email: email, password: password, password_confirmation: password)
+end
+
+When(/^I login as "(.*?)" with password "(.*?)"$/) do |user_email, password|
+  fill_in('Email', with: user_email)
+  fill_in('Password', with: password)
+  click_button('Login')
 end
 
 When(/^I go to \/login$/) do
   visit('/login')
 end
 
-When(/^fill out the fields$/) do
-  fill_in('Email', with: 'foo@bar.com')
-  fill_in('Password', with: 'foobar')
-end
-
-When(/^I submit the form$/) do
-  click_button('Login')
-end
-
 Then(/^I should be redirected to the homepage$/) do
   expect(current_path).to eq(root_path)
+end
+
+Then(/^I should see an alert on the login page$/) do
+  expect(page).to have_content('invalid')
 end
