@@ -1,5 +1,8 @@
 Given(/^there is a user with email "(.*?)", password "(.*?)" and first_name "(.*?)"$/) do |email, password, name|
-  User.create!(email: email, password: password, password_confirmation: password, first_name: name)
+  User.create!(email: email,
+               password: password,
+               password_confirmation: password,
+               first_name: name)
 end
 
 When(/^I login as "(.*?)" with password "(.*?)"$/) do |user_email, password|
