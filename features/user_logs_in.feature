@@ -13,3 +13,7 @@ Feature: User logs in
     When I login as "foo@bar.com" with password "poobar"
     Then I should see an alert on the login page
 
+  Scenario: A user cannot see the secondary header unless he or she is logged in.
+    When I go to the homepage without logging in
+    Then should not see the my first_name "Bazbar" in the secondary header
+
