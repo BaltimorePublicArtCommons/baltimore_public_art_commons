@@ -28,6 +28,6 @@ When(/^I go to the homepage without logging in$/) do
   visit('items')
 end
 
-Then(/^should not see the my first_name "(.*?)" in the secondary header$/) do |name|
+Then(/^should not see the first_name "(.*?)" in the secondary header$/)  do |name|
   expect(page).to_not have_content('Logged in as ' + name)
 end
