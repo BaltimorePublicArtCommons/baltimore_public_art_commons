@@ -35,9 +35,13 @@
         <%= button_tag '', name: nil %>
       <% end %>
     </span>
+
+    <% if logged_in? %>
     <span>
-    <%= flash.notice %>
+    <%= "Logged in as #{current_user.first_name}" %>
     </span>
+    <% end %>
+
   </header>
   <div style='clear:both'></div>
   <%= yield %>
