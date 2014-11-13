@@ -1,0 +1,13 @@
+
+<p>Please enter the e-mail of the contributer you would like to
+invite to the Baltimore Public Art Commons.</p>
+
+<%= form_tag, method: :post do %>
+  <div class="field">
+    <%= label_tag :email %>
+    <%= text_field_tag :email %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Send" %>
+  </div>
+<% end %>
