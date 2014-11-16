@@ -1,0 +1,11 @@
+<p>Please fill out the following to invite a new user</p>
+
+<%= form_tag do %>
+  <div class="field">
+    <%= label_tag :email, 'Email' %>
+    <%= text_field_tag :email %>
+  </div>
+  <div class="action">
+    <%= submit_tag "Send" %>
+  </div>
+<% end %>

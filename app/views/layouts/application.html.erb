@@ -35,13 +35,14 @@
         <%= button_tag '', name: nil %>
       <% end %>
     </span>
-
     <% if logged_in? %>
-    <span>
-    <%= "Logged in as #{current_user.first_name}" %>
-    </span>
+      <span>
+      <%= "Logged in as #{current_user.first_name}" %>
+      </span>
+      <% if current_user.admin? %>
+        <%= link_to 'Invite', users_invite_path %>
+      <%end%>
     <% end %>
-
   </header>
   <div style='clear:both'></div>
   <%= yield %>
