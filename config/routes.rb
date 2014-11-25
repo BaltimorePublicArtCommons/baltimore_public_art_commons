@@ -3,6 +3,7 @@ BaltimorePublicArtCommons::Application.routes.draw do
   resources :sessions, only: [:create, :new]
 
   get 'users/invite', to: 'users#invite', path: '/invite'
+  post '/invite', to: 'invitees#create'
 
   get 'static_pages/about', to: 'static_pages#about', as: 'about', path: '/about'
 
