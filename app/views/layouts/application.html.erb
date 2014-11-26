@@ -25,7 +25,7 @@
     </span>
     <span class='wrapper small-caps'>
       <%= link_to 'Neighborhoods', '#' %> |
-      <%= link_to 'Artists', '#' %> |
+      <%= link_to 'Artists', artists_path %> |
       <%= link_to 'Genres', '#' %> |
       <%= link_to 'About Us', about_path %>
     </span>
@@ -34,12 +34,7 @@
     <%= "Logged in as #{current_user.first_name}" %>
     </span>
     <% end %>
-    <span class='wrapper search-form'>
-      <%= form_tag '/items', method: :get do %>
-        <%= search_field_tag 'query', params[:query], placeholder: 'Search the Collection...' %>
-        <%= button_tag '', name: nil %>
-      <% end %>
-    </span>
+    <%= yield :search %>
   </header>
   <div style='clear:both'></div>
   <%= yield %>

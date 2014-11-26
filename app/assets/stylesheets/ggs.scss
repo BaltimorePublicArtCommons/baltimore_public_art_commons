@@ -148,7 +148,7 @@ p {
   margin-bottom: #{$base-line-height / $base-font-size}em;
 }
 
-.item {
+.item, .artist {
   background-color: $grey;
   padding-top: #{0.5 * ($base-line-height / $base-font-size)}em;
   width: #{$item-width / $base-font-size}em;
@@ -176,9 +176,11 @@ dt {
   &:first-child { margin: 0; }
 }
 
-#items header {
-  float: none;
-  margin: 0;
+#items, #artists {
+  header {
+    float: none;
+    margin: 0;
+  }
 }
 
 /*
@@ -206,7 +208,7 @@ dt {
 }
 
 @media screen and (min-width: #{1300px / $base-font-size}em) {
-  header, article, #items {
+  header, article, #items, #artists {
     margin: 0 $column-width-percentage * 1;
   }
 }

@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    if params[:query]
+    if params[:query].present?
       search_response
     else
       index_response
@@ -24,13 +24,5 @@ class ItemsController < ApplicationController
                                                                  per_page: 12)
     @items_public_data = @items.map { |item| ItemPublicData.new(item) }
     @query_header = query_header_for_query(params[:query], @items.present?)
-  end
-
-  def query_header_for_query(query, any_search_results)
-    if any_search_results
-      "Showing search results for \"#{query}\""
-    else
-      "No search results for \"#{query}\""
-    end
   end
 end
