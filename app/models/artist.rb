@@ -1,6 +1,8 @@
 class Artist < ActiveRecord::Base
   include PgSearch
 
+  has_one :image, as: :imageable
+
   multisearchable against: [:first_name, :last_name]
 
   def birth_date

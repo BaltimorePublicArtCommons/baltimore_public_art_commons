@@ -1,6 +1,7 @@
 class Image < ActiveRecord::Base
   before_destroy :destroy_image_versions
 
+  belongs_to :imageable, polymorphic: true
   has_many :image_versions
 
   mount_uploader :file, ImageUploader
