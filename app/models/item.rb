@@ -10,7 +10,7 @@ class Item < ActiveRecord::Base
   has_many :item_organizational_donors
   has_many :organizational_donors, through: :item_organizational_donors
 
-  has_many :images
+  has_many :images, as: :imageable
   has_many :locations
 
   has_one :fabrication
