@@ -29,12 +29,11 @@
       <%= link_to 'Genres', '#' %> |
       <%= link_to 'About Us', about_path %>
     </span>
-    <span class='wrapper login-status'>
     <% if logged_in? %>
+    <span class="wrapper">
     <%= "Logged in as #{current_user.first_name}" %>
     </span>
     <% end %>
-    </section>
     <span class='wrapper search-form'>
       <%= form_tag '/items', method: :get do %>
         <%= search_field_tag 'query', params[:query], placeholder: 'Search the Collection...' %>
