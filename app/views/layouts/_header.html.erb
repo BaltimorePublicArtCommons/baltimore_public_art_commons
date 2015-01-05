@@ -1,0 +1,42 @@
+<header id='primary-header'>
+  <div class='logo'>
+    <%= link_to root_path do %>
+      <h1>
+        <span class='logo-orange'>Baltimore</span>
+        <br>
+        <span class='logo-blue'>Public Art</span>
+        <br>
+        <span class='logo-orange'>Commons</span>
+      </h1>
+    <% end %>
+  </div>
+
+  <nav class='primary-nav'>
+    <ul class='horizontal-list'>
+      <li class='horizontal-list-element'>
+        <%= link_to 'Collection', items_path %>
+      </li>
+      <li class='horizontal-list-element'>
+        <%= link_to 'Artists', artists_path %>
+      </li>
+      <li class='horizontal-list-element'>
+        <%= link_to 'About Us', about_path %>
+      </li>
+    </ul>
+  </nav>
+
+  <% if logged_in? %>
+    <%= "Logged in as #{current_user.first_name}" %>
+  <% end %>
+
+  <div class='search'>
+    <%= form_tag '/items', method: :get do %>
+      <%= search_field_tag 'query',
+        params[:query],
+        placeholder: 'Search the Collection...',
+        class: 'search-field'
+      %>
+      <%= button_tag '', name: nil, class: 'search-button' %>
+    <% end %>
+  </div>
+</header>

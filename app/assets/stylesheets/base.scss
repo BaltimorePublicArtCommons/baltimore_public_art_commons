@@ -1,0 +1,53 @@
+html {
+  // make 1 rem = 10px
+  font-size: 62.5%;
+}
+
+body {
+  font-family: CallunaSans-Regular;
+  font-size: $base-font-size;
+  font-style: normal;
+  font-weight: normal;
+  line-height: $base-line-height-float;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 2 * $base-font-size;
+  line-height: $base-line-height-float / 2;
+  margin-top: $base-line-height-rem;
+  margin-bottom: $base-line-height-rem;
+}
+
+h2 {
+  font-size: 1.5 * $base-font-size;
+  line-height: $base-line-height-float / 1.5;
+  margin-top: $base-line-height-rem;
+  margin-bottom: $base-line-height-rem;
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+dl {
+  margin-top: 0;
+}
+
+dt {
+  font-weight: bold;
+  line-height: $base-line-height-float / 2;
+}
+
+dt {
+  margin-top: $base-line-height-rem / 2;
+}
+
+dd {
+  margin-left: 0;
+}

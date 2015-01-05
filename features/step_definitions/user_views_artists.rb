@@ -9,7 +9,6 @@ When(/^I want to see a listing of the artists$/) do
   click_link 'Artists'
 end
 
-Then(/^I should see artists$/) do
-  page.should have_content 'Artists'
-  page.should have_selector 'div.artist img', count: 3
+Then(/^I should see (\d+) or fewer artists$/) do |count|
+  expect(page).to have_selector('.tile a[href*="artists"]', maximum: count)
 end

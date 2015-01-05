@@ -1,24 +1,13 @@
-<%= content_for :search do %>
-    <span class='wrapper search-form'>
-      <%= form_tag items_path, method: :get do %>
-        <%= search_field_tag 'query', params[:query], placeholder: 'Search the Collection...' %>
-        <%= button_tag '', name: nil %>
-      <% end %>
-    </span>
+<% if @query_header %>
+  <h2><%= @query_header %></h2>
 <% end %>
 
-<div id='items'>
-  <% if @query_header %>
-    <header class='wrapper'>
-      <h2><%= @query_header %></h2>
-    </header>
-  <% end %>
-
-  <%= will_paginate @items %>
-
+<div class='tiles-container'>
   <%= render partial: 'tile',
     collection: @items_public_data,
     as: :item_public_data,
     locals: { context: :index }
   %>
 </div>
+
+<%= will_paginate @items %>

@@ -1,0 +1,32 @@
+//= depend_on_asset 'search.png'
+
+.search {
+  border: 0.1rem solid $blue;
+  height: $base-line-height-rem;
+  position: relative;
+}
+
+.search-field {
+  border: none;
+  font-size: 1.6rem;
+  outline: none;
+  width: 99%;
+  vertical-align: middle;
+
+  // Safari
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+
+  // Safari iOS
+  padding: 0;
+}
+
+.search-button {
+  background: image-url('search.png') $blue no-repeat;
+  border: none;
+  height: $base-line-height-rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $base-line-height-rem;
+}
