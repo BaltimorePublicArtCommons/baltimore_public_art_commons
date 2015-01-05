@@ -1,0 +1,16 @@
+.horizontal-list {
+  list-style: none;
+  padding: 0;
+}
+
+.horizontal-list-element {
+  display: inline;
+}
+
+.horizontal-list-element:before {
+  content: ' | ';
+}
+
+.horizontal-list-element:first-child:before {
+  content: none;
+}

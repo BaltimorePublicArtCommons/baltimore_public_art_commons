@@ -1,0 +1,20 @@
+$column-width-percentage: 100% / 18;
+
+/*
+*
+*  Four-column grid active
+*  ----------------------------------------
+*  Margin   | #  1   2   3   4   |   Margin
+*  5.55555% | %  25  50  75  100 | 5.55555%
+*
+*/
+
+body {
+  margin: 2.56rem $column-width-percentage;
+}
+
+#primary-header {
+  *:last-child {
+    margin: 0;
+  }
+}

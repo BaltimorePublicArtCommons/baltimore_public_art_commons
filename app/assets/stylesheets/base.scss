@@ -1,0 +1,33 @@
+$base-font-size: 1.6rem;
+$base-line-height-float: 1.6;
+$base-line-height-rem: $base-font-size * $base-line-height-float;
+
+html {
+  // make 1 rem = 10px
+  font-size: 62.5%;
+}
+
+body {
+  font-family: CallunaSans-Regular;
+  font-size: $base-font-size;
+  font-style: normal;
+  font-weight: normal;
+  line-height: $base-line-height-float;
+  text-rendering: optimizeLegibility;
+}
+
+h1 {
+  font-size: 2 * $base-font-size;
+  line-height: $base-line-height-float / 2;
+  margin-top: $base-line-height-rem;
+  margin-bottom: $base-line-height-rem;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
