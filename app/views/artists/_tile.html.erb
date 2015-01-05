@@ -1,8 +1,4 @@
-<div class='wrapper'>
-  <div class='artist'>
-    <%= image_tag artist_public_data.small_image %>
-    <p><%= artist_public_data.name(context) %></p>
-  </div>
+<div class='tile'>
+  <%= image_tag artist_public_data.small_image, class: 'tile-image' %>
+  <div class='tile-title'><%= artist_public_data.name(context) %></div>
 </div>
-   
-

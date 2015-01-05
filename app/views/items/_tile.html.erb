@@ -1,14 +1,11 @@
-<div class='wrapper'>
-  <div class='item'>
+<div class='tile'>
   <% if item_public_data.path(context).present? %>
     <%= link_to item_public_data.path(context) do %>
-      <%= image_tag item_public_data.small_image %>
-      <p><%= item_public_data.name(context) %></p>
+      <%= image_tag item_public_data.small_image, class: 'tile-image' %>
+      <div class='tile-title'><%= item_public_data.name(context) %></div>
     <% end %>
   <% else %>
-    <%= image_tag item_public_data.small_image %>
-    <p><%= item_public_data.name(context) %></p>
+    <%= image_tag item_public_data.small_image, class: 'tile-image' %>
+    <div class='tile-title'><%= item_public_data.name(context) %></div>
   <% end %>
-  </div>
 </div>
-   

@@ -1,6 +1,3 @@
-total_items = 20
-per_page = 12
-
 Given(/^the app has a few items$/) do
   2.times do |index|
     item = Item.create! name: "Test Item #{index}"
@@ -9,7 +6,7 @@ Given(/^the app has a few items$/) do
 end
 
 Given(/^the app has many items$/) do
-  total_items.times do |index|
+  20.times do |index|
     item = Item.create! name: "Test Item #{index}"
     item.images.create!
   end
@@ -24,11 +21,11 @@ Then(/^I should see that more pages are available$/) do
 end
 
 Then(/^I should only see (\d+) items on the page$/) do |count|
-  page.should have_selector 'div.item', count: count
+  expect(page).to have_selector('.tile a[href*="items"]', count: count)
 end
 
 Then(/^I should see (\d+) or fewer items on the page$/) do |count|
-  page.should have_selector 'div.item', maximum: count
+  expect(page).to have_selector('.tile a[href*="items"]', maximum: count)
 end
 
 When(/^I want to see more content$/) do
@@ -36,8 +33,7 @@ When(/^I want to see more content$/) do
 end
 
 Then(/^I should see the second page of content$/) do
-  page.should have_content 'Previous'
-  page.should have_selector 'div.item', count: (total_items - per_page)
+  expect(page).to have_selector('.pagination .current', text: '2')
 end
 
 When(/^I want to read more about the app$/) do

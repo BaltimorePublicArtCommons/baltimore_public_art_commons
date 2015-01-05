@@ -5,38 +5,19 @@
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-  <meta name='viewport' content='initial-scale=1.0, user-scalable=no'>
-
   <% if Rails.env.development? %>
-    <%= stylesheet_link_tag "ggs-js" %>
-    <%= javascript_include_tag "ggs" %>
+    <script src="/assets/ggs.js"></script>
   <% end %>
+
+  <meta name='viewport' content='initial-scale=1.0, user-scalable=no'>
 
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-    <span class='wrapper'>
-      <%= link_to root_path, class: 'logo' do %>
-        <h1 class='orange'>Baltimore</h1>
-        <h1 class='blue'>Public Art</h1>
-        <h1 class='orange'>Commons</h1>
-      <% end %>
-    </span>
-    <span class='wrapper small-caps'>
-      <%= link_to 'Neighborhoods', '#' %> |
-      <%= link_to 'Artists', artists_path %> |
-      <%= link_to 'Genres', '#' %> |
-      <%= link_to 'About Us', about_path %>
-    </span>
-    <% if logged_in? %>
-    <span class="wrapper">
-    <%= "Logged in as #{current_user.first_name}" %>
-    </span>
-    <% end %>
-    <%= yield :search %>
-  </header>
-  <div style='clear:both'></div>
-  <%= yield %>
+  <%= render partial: 'layouts/header' %>
+
+  <div id='main-content'>
+    <%= yield %>
+  </div>
 </body>
 </html>

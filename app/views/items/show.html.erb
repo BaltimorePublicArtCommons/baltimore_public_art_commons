@@ -1,28 +1,28 @@
-<article>
-  <%= render partial: 'tile',
-    locals: { item_public_data: @item_public_data, context: :show } %>
+<div class='tiles-container'>
+ <%= render partial: 'tile',
+   locals: { item_public_data: @item_public_data, context: :show } %>
 
-  <div class='wrapper'>
+  <div class='tile tile-no-background'>
     <dl>
-      <dt><h3>Neighborhood</h3></dt>
+      <dt>Neighborhood</dt>
       <dd><%= @item_public_data.neighborhood %></dd>
 
-      <dt><h3>Artists</h3></dt>
+      <dt>Artists</dt>
       <% @item_public_data.artists.each do |artist| %>
         <dd><%= artist %></dd>
       <% end %>
 
-      <dt><h3>Material<h3></dt>
+      <dt>Material</dt>
       <dd><%= @item_public_data.material %></dd>
 
-      <dt><h3>Dimensions<h3></dt>
+      <dt>Dimensions</dt>
       <dd><%= @item_public_data.dimensions %></dd>
 
-      <dt><h3>Installation Date</h3></dt>
+      <dt>Installation Date</dt>
       <dd><%= @item_public_data.installation_date %></dd>
 
-      <dt><h3>Genre</h3></dt>
+      <dt>Genre</dt>
       <dd><%= @item_public_data.genre %></dd>
     </dl>
   </div>
-</article>
+</div>

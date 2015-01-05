@@ -27,7 +27,6 @@ end
 group :development, :test do
   gem 'rake'
   gem 'rspec-rails'
-  gem 'sprockets_better_errors'
   gem 'pry-rails'
 end
 

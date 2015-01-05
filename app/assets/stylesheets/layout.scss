@@ -1,0 +1,13 @@
+$column-width-percentage: 100% / 18;
+
+body {
+  margin: $base-line-height-rem $column-width-percentage;
+}
+
+#primary-header {
+  *:last-child {
+    margin: 0;
+  }
+
+  margin-bottom: $base-line-height-rem;
+}

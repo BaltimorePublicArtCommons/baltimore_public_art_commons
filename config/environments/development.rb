@@ -27,8 +27,9 @@ BaltimorePublicArtCommons::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  # Enable sprockets_better_errors
-  config.assets.raise_production_errors = true
+  # Add runtime error checking to catch errors that would otherwise make it into
+  # production
+  config.assets.raise_runtime_errors = true
 
   # Include ggs-js development dependency to asset precompile list to comply
   # with sprockets_better_errors

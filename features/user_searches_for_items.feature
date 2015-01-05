@@ -8,12 +8,12 @@ Feature: User searches for items
 
   Scenario: A user wants to search for an item by name
     When I search for "Test Item 1"
-    Then I should see "1" item that matches name "Test Item 1"
+    Then I should see 1 item that matches name "Test Item 1"
 
   Scenario: A user wants to search for an item by neighborhood
     When I search for "Fells Point"
-    Then I should see "2" items that match neighborhood "Fells Point"
+    Then I should see 2 items that match neighborhood "Fells Point"
 
   Scenario: A user wants to search for an item by artist
     When I search for "Jane Artist"
-    Then I should see "1" item that match artist "Jane Artist"
+    Then I should see 1 item that matches artist "Jane Artist"

@@ -1,25 +1,8 @@
-<%= content_for :search do %>
-    <span class='wrapper search-form'>
-      <%= form_tag artists_path, method: :get do %>
-        <%= search_field_tag 'query', params[:query], placeholder: 'Search the Artists...' %>
-        <%= button_tag '', name: nil %>
-      <% end %>
-    </span>
+<% if @query_header %>
+  <h2><%= @query_header %></h2>
 <% end %>
 
-<div id='artists'>
-  <header class='wrapper'>
-    <h2>Artists</h2>
-  </header>
-
-  <% if @query_header %>
-    <header class='wrapper'>
-      <h2><%= @query_header %></h2>
-    </header>
-  <% end %>
-
-  <%= will_paginate @artists %>
-
+<div class='tiles-container'>
   <%= render partial: 'tile',
     collection: @artists_public_data,
     as: :artist_public_data,
@@ -27,3 +10,4 @@
   %>
 </div>
 
+<%= will_paginate @artists %>
