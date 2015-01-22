@@ -1,15 +1,13 @@
-<div id='items'>
-  <% if @query_header %>
-    <header class='wrapper'>
-      <h2><%= @query_header %></h2>
-    </header>
-  <% end %>
+<% if @query_header %>
+  <header class='wrapper'>
+    <h2><%= @query_header %></h2>
+  </header>
+<% end %>
 
-  <%= will_paginate @items %>
+<%= render partial: 'tile',
+  collection: @items_public_data,
+  as: :item_public_data,
+  locals: { context: :index }
+%>
 
-  <%= render partial: 'tile',
-    collection: @items_public_data,
-    as: :item_public_data,
-    locals: { context: :index }
-  %>
-</div>
+<%= will_paginate @items %>

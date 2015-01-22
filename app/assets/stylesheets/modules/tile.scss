@@ -1,0 +1,33 @@
+$grey: #666666;
+$base-line-height: 2.56rem;
+$tile-width: 26rem;
+$tile-height: $base-line-height * 10;
+$image-width: 23.5rem;
+$image-height: $image-width;
+
+.tile {
+  background-color: $grey;
+  margin-bottom: $base-line-height;
+  width: $tile-width;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+.tile-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: $base-line-height / 2;
+}
+
+.tile-title {
+  $tile-image-overflow: $base-line-height / 2;
+  $tile-title-height: $tile-height - $tile-image-overflow - $image-height;
+
+  color: white;
+  margin-left: ($tile-width - $image-width) / 2;
+  margin-top: $tile-title-height / 2;
+  padding-bottom: $tile-title-height / 2;
+}
