@@ -1,8 +1,8 @@
 $grey: #666666;
 $base-line-height: 2.56rem;
-$tile-width: 26rem;
-$tile-height: $base-line-height * 10;
-$image-width: 23.5rem;
+$tile-width: 28.4rem;
+$tile-height: $base-line-height * 11;
+$image-width: 26rem;
 $image-height: $image-width;
 
 .tile {
@@ -20,6 +20,9 @@ $image-height: $image-width;
   margin-left: auto;
   margin-right: auto;
   padding-top: $base-line-height / 2;
+
+  // placeholder until image sizes are updated
+  width: 26rem;
 }
 
 .tile-title {
