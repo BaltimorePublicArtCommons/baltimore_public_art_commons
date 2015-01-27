@@ -1,0 +1,9 @@
+$orange: #F6921E;
+
+.pagination {
+  text-align: center;
+
+  .current {
+    color: $orange;
+  }
+}
