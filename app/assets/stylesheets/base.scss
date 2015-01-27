@@ -23,6 +23,13 @@ h1 {
   margin-bottom: $base-line-height-rem;
 }
 
+h2 {
+  font-size: 1.5 * $base-font-size;
+  line-height: $base-line-height-float / 1.5;
+  margin-top: $base-line-height-rem;
+  margin-bottom: $base-line-height-rem;
+}
+
 a {
   text-decoration: none;
   color: #000;
