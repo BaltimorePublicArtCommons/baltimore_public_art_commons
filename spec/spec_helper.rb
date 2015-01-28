@@ -44,3 +44,11 @@ RSpec.configure do |config|
     FileUtils.rm_rf(Dir["#{Rails.root}/public/spec/[^.]*"])
   end
 end
+
+# have all VCR cassettes be kept in the same place
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/vcr_cassettes'
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+end
+
