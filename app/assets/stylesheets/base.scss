@@ -30,13 +30,6 @@ h2 {
   margin-bottom: $base-line-height-rem;
 }
 
-h3 {
-  font-size: 1.1 * $base-font-size;
-  line-height: $base-line-height-float / 1.1;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
 a {
   text-decoration: none;
   color: #000;
@@ -44,4 +37,17 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+dt {
+  $line-height: $base-line-height-float / 2;
+  $overflow: $base-line-height-rem - ($line-height * $base-font-size);
+
+  font-weight: bold;
+  line-height: $line-height;
+  margin-top: $base-line-height-rem - $overflow;
+}
+
+dd {
+  margin-left: 0;
 }
