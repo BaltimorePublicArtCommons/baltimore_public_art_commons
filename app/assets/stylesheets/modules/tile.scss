@@ -1,14 +1,10 @@
 $grey: #666666;
 $base-line-height: 2.56rem;
-$tile-width: 28.4rem;
-$tile-height: $base-line-height * 11;
-$image-width: 26rem;
-$image-height: $image-width;
+$tile-content-width: 92%;
 
 .tile {
   background-color: $grey;
   margin-bottom: $base-line-height;
-  width: $tile-width;
 
   a {
     text-decoration: none;
@@ -17,20 +13,15 @@ $image-height: $image-width;
 
 .tile-image {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   padding-top: $base-line-height / 2;
-
-  // placeholder until image sizes are updated
-  width: 26rem;
+  width: $tile-content-width;
 }
 
 .tile-title {
-  $tile-image-overflow: $base-line-height / 2;
-  $tile-title-height: $tile-height - $tile-image-overflow - $image-height;
-
   color: white;
-  margin-left: ($tile-width - $image-width) / 2;
-  margin-top: $tile-title-height / 2;
-  padding-bottom: $tile-title-height / 2;
+  margin: 0 auto;
+  padding-top: $base-line-height / 4;
+  padding-bottom: $base-line-height / 4;
+  width: $tile-content-width;
 }
