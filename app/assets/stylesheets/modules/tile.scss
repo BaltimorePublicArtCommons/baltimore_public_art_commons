@@ -2,12 +2,32 @@ $grey: #666666;
 $base-line-height: 2.56rem;
 $tile-content-width: 92%;
 
+.flexbox-container {
+  @media (min-width: 640px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
 .tile {
   background-color: $grey;
   margin-bottom: $base-line-height;
 
   a {
     text-decoration: none;
+  }
+  
+  @media (min-width: 640px) {
+    width: 49%;
+  }
+
+  @media (min-width: 800px) {
+    width: 32%;
+  }
+  
+  @media (min-width: 1200px) {
+    width: 24%;
   }
 }
 
