@@ -7,7 +7,8 @@ describe User do
       last_name: 'user',
       email: 'user@example.com',
       password: 'foobar',
-      password_confirmation: 'foobar')
+      password_confirmation: 'foobar',
+      organization: 'Big Organization')
   end
 
   subject { user }
@@ -18,6 +19,7 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
+  it { should respond_to(:organization) }
 
   it { should be_valid }
 end
