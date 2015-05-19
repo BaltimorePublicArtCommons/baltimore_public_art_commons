@@ -2,10 +2,12 @@
   <h2><%= @query_header %></h2>
 <% end %>
 
-<%= render partial: 'tile',
-  collection: @items_public_data,
-  as: :item_public_data,
-  locals: { context: :index }
-%>
+<div class='tile-container'>
+  <%= render partial: 'tile',
+    collection: @items_public_data,
+    as: :item_public_data,
+    locals: { context: :index }
+  %>
+</div>
 
 <%= will_paginate @items %>

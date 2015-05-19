@@ -2,9 +2,19 @@ $grey: #666666;
 $base-line-height: 2.56rem;
 $tile-content-width: 92%;
 
+.tile-container {
+  -webkit-columns: 4 30rem;
+     -moz-columns: 4 30rem;
+          columns: 4 30rem;
+}
+
 .tile {
   background-color: $grey;
   margin-bottom: $base-line-height;
+
+  -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+                 break-inside: avoid;
 
   a {
     text-decoration: none;
