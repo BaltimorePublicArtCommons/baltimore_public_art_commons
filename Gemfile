@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.1.0'
+ruby '2.2.2'
 
 gem 'addressable'
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 gem 'carrierwave'
 gem 'colorize'
 gem 'fog'
@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'partial-date'
 gem 'pg'
 gem 'pg_search'
-gem 'rails', '4.0.2'
+gem 'rails', '4.2.2'
 gem 'rest-client'
 gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
@@ -28,6 +28,7 @@ group :development, :test do
   gem 'rake'
   gem 'rspec-rails'
   gem 'sprockets_better_errors'
+  gem 'pry-rails'
 end
 
 group :test do

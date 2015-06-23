@@ -16,71 +16,71 @@ ActiveRecord::Schema.define(version: 20150509023931) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "artists", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+  create_table "artists", force: :cascade do |t|
+    t.string   "first_name",    limit: 255
+    t.string   "last_name",     limit: 255
     t.integer  "birth_date"
     t.integer  "deceased_date"
-    t.string   "title"
+    t.string   "title",         limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "bio"
-    t.string   "bio_source"
+    t.string   "bio_source",    limit: 255
   end
 
-  create_table "fabrications", force: true do |t|
+  create_table "fabrications", force: :cascade do |t|
     t.integer  "date"
-    t.string   "fabricator"
+    t.string   "fabricator", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "item_id"
-    t.string   "city"
-    t.string   "state"
-    t.string   "country"
+    t.string   "city",       limit: 255
+    t.string   "state",      limit: 255
+    t.string   "country",    limit: 255
   end
 
-  create_table "image_versions", force: true do |t|
-    t.string   "file"
-    t.string   "version"
+  create_table "image_versions", force: :cascade do |t|
+    t.string   "file",       limit: 255
+    t.string   "version",    limit: 255
     t.integer  "image_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "images", force: true do |t|
-    t.string   "file"
+  create_table "images", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "imageable_id"
-    t.string   "imageable_type"
+    t.string   "file",           limit: 255
+    t.string   "imageable_type", limit: 255
   end
 
-  create_table "individual_donors", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+  create_table "individual_donors", force: :cascade do |t|
+    t.string   "first_name", limit: 255
+    t.string   "last_name",  limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "item_artists", force: true do |t|
+  create_table "item_artists", force: :cascade do |t|
     t.integer "item_id"
     t.integer "artist_id"
   end
 
-  create_table "item_individual_donors", force: true do |t|
+  create_table "item_individual_donors", force: :cascade do |t|
     t.integer "item_id"
     t.integer "individual_donor_id"
   end
 
-  create_table "item_organizational_donors", force: true do |t|
+  create_table "item_organizational_donors", force: :cascade do |t|
     t.integer "item_id"
     t.integer "organizational_donor_id"
   end
 
-  create_table "items", force: true do |t|
-    t.string   "name"
-    t.string   "material"
-    t.string   "genre"
+  create_table "items", force: :cascade do |t|
+    t.string   "name",                    limit: 255
+    t.string   "material",                limit: 255
+    t.string   "genre",                   limit: 255
     t.integer  "installation_start_date"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -91,9 +91,9 @@ ActiveRecord::Schema.define(version: 20150509023931) do
     t.text     "context"
   end
 
-  create_table "locations", force: true do |t|
-    t.string   "neighborhood"
-    t.string   "street_address"
+  create_table "locations", force: :cascade do |t|
+    t.string   "neighborhood",   limit: 255
+    t.string   "street_address", limit: 255
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "created_at"
@@ -102,29 +102,29 @@ ActiveRecord::Schema.define(version: 20150509023931) do
     t.boolean  "current"
   end
 
-  create_table "organizational_donors", force: true do |t|
-    t.string   "name"
+  create_table "organizational_donors", force: :cascade do |t|
+    t.string   "name",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "pg_search_documents", force: true do |t|
+  create_table "pg_search_documents", force: :cascade do |t|
     t.text     "content"
     t.integer  "searchable_id"
-    t.string   "searchable_type"
+    t.string   "searchable_type", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password_digest"
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name",      limit: 255
+    t.string   "last_name",       limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
-    t.string   "organization"
+    t.string   "organization",    limit: 255
   end
 
 end
