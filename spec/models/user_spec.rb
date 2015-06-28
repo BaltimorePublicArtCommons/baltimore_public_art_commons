@@ -8,7 +8,8 @@ describe User do
       email: 'user@example.com',
       password: 'foobar',
       password_confirmation: 'foobar',
-      organization: 'Big Organization')
+      organization: 'Big Organization',
+      role: 'curator')
   end
 
   subject { user }
@@ -20,6 +21,7 @@ describe User do
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:organization) }
+  it { should respond_to(:role) }
 
   it { should be_valid }
 end
