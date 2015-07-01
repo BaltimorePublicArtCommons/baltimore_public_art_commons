@@ -1,0 +1,9 @@
+<p>
+  Welcome!
+</p>
+<p>
+  You've been invited to contribute to the Baltimore Public Art Commons. Please click the following link to complete your registration.
+</p>
+<p>
+  <%= link_to "Finish Registration", edit_user_url(@user, confirmation_hash: @user.confirmation_hash) %>
+</p>

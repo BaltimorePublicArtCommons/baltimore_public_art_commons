@@ -27,6 +27,9 @@
 
   <% if logged_in? %>
     <%= "Logged in as #{current_user.first_name}" %>
+    <li class='horizontal-list-element'>
+      <%= link_to 'Invite User', new_user_path %>
+    </li>
   <% end %>
 
   <div class='search'>

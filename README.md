@@ -16,9 +16,9 @@ your system is configured to run Ruby, Rails, and its dependencies.
   1. Clone the project
 
     `git clone git@github.com:BaltimorePublicArtCommons/baltimore_public_art_commons.git`
-  
+
   2. Navigate to the project directory
-  
+
     `cd baltimore_public_art_commons`
 
   3. Install gems
@@ -26,7 +26,7 @@ your system is configured to run Ruby, Rails, and its dependencies.
   `bundle install`
 
     *You will need to use the same version of Ruby as the project. The project's Ruby version is defined in the `.ruby-version` file.*
-    
+
     *The install will fail if you don't have Postgres installed and running.*
 
   4. Copy database config
@@ -40,16 +40,20 @@ your system is configured to run Ruby, Rails, and its dependencies.
     ```
     rake db:setup
     ```
-    
     This will create an admin user with email "admin@publicartcommons.dev" and password "password".
-    
+
   6. Set the application's secret_key_base
-  
+
     From the command line, run `rake secret`. Then, copy the string output and set it as an environment variable called `bpac_secret_key_base`.
-  
+
   7. Start the app!
-  
+
     `rails s`
+
+  8. We use MailCatcher for checking any mailers you build.
+
+     In your console: `gem install mailcatcher`
+     Then, when you send an email, you can check it by going to http://localhost:1080/
 
 ## Entity-Relationship Diagrams? We got'em!
 

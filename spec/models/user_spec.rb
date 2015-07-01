@@ -1,4 +1,5 @@
 require 'spec_helper'
+# require 'random_hash'
 
 describe User do
   let(:user) do
@@ -9,7 +10,9 @@ describe User do
       password: 'foobar',
       password_confirmation: 'foobar',
       organization: 'Big Organization',
-      role: 'curator')
+      role: 'curator',
+      confirmation_hash: RandomHash.generate
+    )
   end
 
   subject { user }
@@ -22,6 +25,7 @@ describe User do
   it { should respond_to(:password_confirmation) }
   it { should respond_to(:organization) }
   it { should respond_to(:role) }
+  it { should respond_to(:confirmation_hash) }
 
   it { should be_valid }
 end

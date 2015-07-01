@@ -79,8 +79,13 @@ GEM
     database_cleaner (1.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    excon (0.45.4)
+    excon (0.32.1)
     execjs (2.0.2)
+    factory_girl (4.5.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.5.0)
+      factory_girl (~> 4.5.0)
+      railties (>= 3.0.0)
     fission (0.5.0)
       CFPropertyList (~> 2.2)
     fog (1.32.0)
@@ -329,6 +334,7 @@ DEPENDENCIES
   colorize
   cucumber-rails
   database_cleaner
+  factory_girl_rails (~> 4.5)
   fog
   jbuilder (~> 1.2)
   jquery-rails
@@ -353,4 +359,4 @@ DEPENDENCIES
   will_paginate (~> 3.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
