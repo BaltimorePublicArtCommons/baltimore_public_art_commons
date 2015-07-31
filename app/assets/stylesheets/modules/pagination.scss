@@ -1,11 +1,19 @@
 .pagination {
   text-align: center;
+  font-variant: small-caps;
+  font-size: 18px;
 
   a {
     color: black;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
   }
 
   .current {
     color: $orange;
+  }
+
+  .disabled {
+    color: #999999;
   }
 }
