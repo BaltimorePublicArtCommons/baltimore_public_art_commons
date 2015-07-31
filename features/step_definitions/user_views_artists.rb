@@ -14,9 +14,9 @@ Then(/^I should see (\d+) or fewer artists$/) do |count|
 end
 
 When(/^I want to see more information about the first artist$/) do
-  click_link 'Test Artist 0'
+  click_link 'Test_0 Artist'
 end
 
 Then(/^I should see information about the first artist$/) do
-  page.should have_content 'Test Artist 0'
+  page.should have_content 'Test_0 Artist'
 end
