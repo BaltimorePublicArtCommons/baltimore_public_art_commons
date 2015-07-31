@@ -55,6 +55,30 @@ your system is configured to run Ruby, Rails, and its dependencies.
   
     `rails s`
 
+## Entity-Relationship Diagrams? We got'em!
+
+To be able to generate Entity-Relationship Diagrams, you'll need to have
+GraphViz 2.2 or higher installed.
+
+On Linux:
+
+```sh
+    sudo apt-get install graphviz
+```
+
+On OS X:
+
+
+```sh
+    brew install graphviz
+```
+
+Then,
+
+```sh
+    rake erd
+```
+
 ## Contributing
 
 Contact the project organziers if you'd like to contribute to the project.
