@@ -19,7 +19,22 @@ class ArtistPublicData
       if @artist.image.present?
         @artist.image.file.url
       end
+    else
+      "/artists/#{@artist.id}"
     end
+  end
+
+  def bio
+    missing_bio = "Baltimore Public Art Commons is sourcing"          <<
+      " biographical information about artists from Wikipedia, but"   <<
+      " #{name(:show)} does not have an entry. If you would like to"  <<
+      " contribute, please add the artist to Wikipedia."
+
+    @artist.bio || missing_bio
+  end
+
+  def bio_source
+    @artist.bio_source
   end
 
   def small_image

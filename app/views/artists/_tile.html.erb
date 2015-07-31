@@ -1,4 +1,11 @@
 <div class='tile'>
-  <%= image_tag artist_public_data.small_image, class: 'tile-image' %>
-  <div class='tile-title'><%= artist_public_data.name(context) %></div>
+  <% if artist_public_data.path(context).present? %>
+    <%= link_to artist_public_data.path(context) do %>
+      <%= image_tag artist_public_data.small_image, class: 'tile-image' %>
+      <div class='tile-title'><%= artist_public_data.name(context) %></div>
+    <% end %>
+  <% else %>
+    <%= image_tag artist_public_data.small_image, class: 'tile-image' %>
+    <div class='tile-title'><%= artist_public_data.name(context) %></div>
+  <% end %>
 </div>

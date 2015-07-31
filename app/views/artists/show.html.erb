@@ -1,0 +1,11 @@
+<div class='tiles-container'>
+ <%= render partial: 'tile',
+   locals: { artist_public_data: @artist_public_data, context: :show } %>
+
+  <div class='tile tile-no-background'>
+    <p><%= @artist_public_data.bio %></p>
+    <% unless @artist_public_data.bio_source.blank? %>
+      <p>Go <a href="<%= @artist_public_data.bio_source %>">here</a> to read more.</p>
+    <% end %>
+  </div>
+</div>
