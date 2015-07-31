@@ -61,16 +61,16 @@ To be able to re-generate erd.pdf (the Entity-Relationship Diagram),
 you'll need to have GraphViz 2.2 or higher installed.
 
 On Linux:
+
   `sudo apt-get install graphviz`
 
 On OS X:
+
   `brew install graphviz`
 
 Then,
 
-```sh
-    rake erd
-```
+  `rake erd`
 
 ## Contributing
 
