@@ -19,6 +19,8 @@ class ArtistPublicData
       if @artist.image.present?
         @artist.image.file.url
       end
+    else
+      "/artists/#{@artist.id}"
     end
   end
 
