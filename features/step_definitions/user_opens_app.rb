@@ -33,7 +33,7 @@ When(/^I want to see more content$/) do
 end
 
 Then(/^I should see the second page of content$/) do
-  expect(page).to have_selector('.pagination .current', text: '2')
+  expect(URI.parse(current_url).query).to include('page=2')
 end
 
 When(/^I want to read more about the app$/) do
