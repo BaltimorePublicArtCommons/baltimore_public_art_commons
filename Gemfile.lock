@@ -51,6 +51,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
+    choice (0.2.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -158,6 +159,11 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
+    rails-erd (1.4.1)
+      activerecord (>= 3.2)
+      activesupport (>= 3.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     rails_12factor (0.0.2)
@@ -188,6 +194,7 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
+    ruby-graphviz (1.2.2)
     safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.5)
@@ -247,6 +254,7 @@ DEPENDENCIES
   pg_search
   pry-rails
   rails (= 4.2.2)
+  rails-erd
   rails_12factor
   rake
   rest-client
@@ -261,4 +269,4 @@ DEPENDENCIES
   will_paginate (~> 3.0)
 
 BUNDLED WITH
-   1.10.5
+   1.10.6

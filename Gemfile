@@ -30,6 +30,10 @@ group :development, :test do
   gem 'pry-rails'
 end
 
+group :development do
+  gem 'rails-erd'
+end
+
 group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
