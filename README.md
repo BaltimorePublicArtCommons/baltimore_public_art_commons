@@ -38,14 +38,10 @@ your system is configured to run Ruby, Rails, and its dependencies.
   5. Setup databases
 
     ```
-    rake db:create:all
-    rake db:migrate
-    rake db:test:prepare
+    rake db:setup
     ```
     
-    Optionally, load seed data.
-    
-    `rake db:seed`
+    This will create an admin user with email "admin@publicartcommons.dev" and password "password".
     
   6. Set the application's secret_key_base
   
