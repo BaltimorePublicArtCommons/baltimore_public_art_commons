@@ -55,6 +55,23 @@ your system is configured to run Ruby, Rails, and its dependencies.
   
     `rails s`
 
+## Entity-Relationship Diagrams? We got'em!
+
+To be able to re-generate erd.pdf (the Entity-Relationship Diagram),
+you'll need to have GraphViz 2.2 or higher installed.
+
+On Linux:
+
+  `sudo apt-get install graphviz`
+
+On OS X:
+
+  `brew install graphviz`
+
+Then,
+
+  `rake erd`
+
 ## Contributing
 
 Contact the project organziers if you'd like to contribute to the project.
