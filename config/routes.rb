@@ -7,5 +7,7 @@ BaltimorePublicArtCommons::Application.routes.draw do
 
   get '/login', to: 'sessions#new', as: 'login'
 
+  get '/admin', to: 'admin_dashboard#show'
+
   root 'items#index'
 end
