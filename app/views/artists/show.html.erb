@@ -3,15 +3,6 @@
    locals: { artist_public_data: @artist_public_data, context: :show } %>
 
   <div class='tile tile-no-background'>
-    <dl>
-      <dt>Born</dt>
-      <dd><%= @artist_public_data.birth_date.blank? ? "Unknown" : @artist_public_data.birth_date %></dd>
-
-      <% unless @artist_public_data.deceased_date.blank? %>
-        <dt>Died</dt>
-        <dd><%= @artist_public_data.deceased_date %></dd>
-      <% end %>
-    </dl>
     <p><%= @artist_public_data.bio %></p>
     <% unless @artist_public_data.bio_source.blank? %>
       <p>Go <a href="<%= @artist_public_data.bio_source %>">here</a> to read more.</p>
