@@ -24,6 +24,27 @@ class ArtistPublicData
     end
   end
 
+  def birth_date
+    @artist.birth_date.to_s
+  end
+
+  def deceased_date
+    @artist.deceased_date.to_s
+  end
+
+  def bio
+    missing_bio = "Baltimore Public Art Commons is sourcing"          <<
+      " biographical information about artists from Wikipedia, but"   <<
+      " #{name(:show)} does not have an entry. If you would like to"  <<
+      " contribute, please create an entry."
+
+    @artist.bio || missing_bio
+  end
+
+  def bio_source
+    @artist.bio_source
+  end
+
   def small_image
     return 'not_available.jpg' if !@artist.image.present?
     @artist.image.small.file
