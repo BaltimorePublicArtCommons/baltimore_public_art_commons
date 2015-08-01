@@ -6,4 +6,8 @@ class ArtistsController < ApplicationController
 
     @artists_public_data = @artists.map { |artist| ArtistPublicData.new(artist) }
   end
+
+  def show
+    @artist_public_data = ArtistPublicData.new(Artist.find(params[:id]))
+  end
 end
