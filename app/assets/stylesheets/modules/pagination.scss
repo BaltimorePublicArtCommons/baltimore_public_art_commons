@@ -1,12 +1,12 @@
 .pagination {
   text-align: center;
   font-variant: small-caps;
-  font-size: 18px;
+  font-size: 1.125 * $base-font-size;
 
   a {
     color: black;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 
   .current {
