@@ -28,7 +28,7 @@ class ArtistPublicData
     missing_bio = "Baltimore Public Art Commons is sourcing"          <<
       " biographical information about artists from Wikipedia, but"   <<
       " #{name(:show)} does not have an entry. If you would like to"  <<
-      " contribute, please create an entry."
+      " contribute, please add the artist to Wikipedia."
 
     @artist.bio || missing_bio
   end
