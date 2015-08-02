@@ -3,11 +3,21 @@ class ItemPublicData
     @item = item
   end
 
+  def id
+    @item.id
+  end
+
   def artists
     return ['No Value'] if @item.artists.empty?
-    @item.artists.map do |artist|
-      "#{artist.first_name} #{artist.last_name}"
-    end
+    @item.artists.map(&:full_name)
+  end
+
+  def artist_et_al
+    return 'No Value' if @item.artists.empty?
+
+    name = @item.artists.first.full_name
+    name += ', et al.' if @item.artists.size > 1
+    name
   end
 
   def genre

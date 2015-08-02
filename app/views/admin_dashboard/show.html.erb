@@ -1,1 +1,22 @@
- 
+<table>
+  <thead> 
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Artist</th>
+      <th>Neighborhood</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items_public_data.each do |item_public_data| %>
+      <tr class='item'>
+        <td><%= item_public_data.id %></td>
+        <td><%= item_public_data.name(:index) %></td>
+        <td><%= item_public_data.artist_et_al %></td>
+        <td><%= item_public_data.neighborhood %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+
+<%= will_paginate @items, page_links: false %>

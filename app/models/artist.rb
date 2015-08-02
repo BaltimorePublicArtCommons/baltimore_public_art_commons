@@ -12,4 +12,8 @@ class Artist < ActiveRecord::Base
   def deceased_date
     PartialDateLoader.load(self, :deceased_date)
   end
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end
