@@ -1,3 +1,9 @@
+Given("I'm logged in as an admin") do
+  step 'there is a user with email "admin@example.com", password "admin" and first_name "Admin"'
+  step 'I go to /login'
+  step 'I login as "admin@example.com" with password "admin"'
+end
+
 Given(/^there is a user with email "(.*?)", password "(.*?)" and first_name "(.*?)"$/) do |email, password, name|
   User.create!(email: email,
                password: password,
