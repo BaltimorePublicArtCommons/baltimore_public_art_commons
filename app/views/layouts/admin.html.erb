@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baltimore Public Art Commons</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+  <% if Rails.env.development? %>
+    <script src="/assets/ggs.js"></script>
+  <% end %>
+
+  <meta name='viewport' content='initial-scale=1.0, user-scalable=no'>
+
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render partial: 'layouts/admin/header' %>
+
+  <div id='main-content'>
+    <%= yield %>
+  </div>
+</body>
+</html>

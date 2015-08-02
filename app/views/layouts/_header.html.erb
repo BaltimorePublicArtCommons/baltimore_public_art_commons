@@ -25,10 +25,6 @@
     </ul>
   </nav>
 
-  <% if logged_in? %>
-    <%= "Logged in as #{current_user.first_name}" %>
-  <% end %>
-
   <div class='search'>
     <%= form_tag '/items', method: :get do %>
       <%= search_field_tag 'query',

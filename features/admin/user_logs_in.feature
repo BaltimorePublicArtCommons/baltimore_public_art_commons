@@ -6,14 +6,12 @@ Feature: User logs in
 
   Scenario: A user wants to login
     When I login as "foo@bar.com" with password "foobar"
-    Then I should be redirected to the homepage
-    And see my first_name "Bazbar" in the secodary header
+    Then I should be redirected to the admin dashboard
 
   Scenario: A user logs in with the wrong credentials
     When I login as "foo@bar.com" with password "poobar"
     Then I should see an alert on the login page
 
-  Scenario: A user cannot see the secondary header unless he or she is logged in.
-    When I go to the homepage without logging in
-    Then I should not see my first name "Bazbar" in the secondary header
-
+  Scenario: A user cannot go to the admin dashboard unless he or she is logged in
+    When I go to the admin dashboard without logging in
+    Then I should be redirected to the login page

@@ -15,22 +15,18 @@ When(/^I go to \/login$/) do
   visit('/login')
 end
 
-Then(/^I should be redirected to the homepage$/) do
-  expect(current_path).to eq(root_path)
+Then(/^I should be redirected to the admin dashboard$/) do
+  expect(current_path).to eq(admin_path)
 end
 
 Then(/^I should see an alert on the login page$/) do
   expect(page).to have_content('invalid')
 end
 
-Then(/^see my first_name "(.*?)" in the secodary header$/) do |name|
-  expect(page).to have_content('Logged in as ' + name)
+When(/^I go to the admin dashboard without logging in$/) do
+  visit admin_path
 end
 
-When(/^I go to the homepage without logging in$/) do
-  visit('items')
-end
-
-Then(/^I should not see my first name "(.*?)" in the secondary header$/)  do |name|
-  expect(page).to_not have_content('Logged in as ' + name)
+Then(/^I should be redirected to the login page$/) do
+  expect(current_path).to eq(new_session_path)
 end
