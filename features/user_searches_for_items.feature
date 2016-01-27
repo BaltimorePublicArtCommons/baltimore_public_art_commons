@@ -1,19 +1,21 @@
 Feature: User searches for items
+  A user searches for items to quicky find information about an item
 
   Background:
-    Given there is an item named "Test Item 1" by "John Artist" in "Fells Point"
-    And there is an item named "Test Item 2" by "John Artist" in "Fells Point"
-    And there is an item named "Test Item 3" by "Jane Artist" in "Station North"
-    And I open the app
+    Given there are a few items
 
-  Scenario: A user wants to search for an item by name
-    When I search for "Test Item 1"
-    Then I should see 1 item that matches name "Test Item 1"
+  Scenario: A user searches for an item by name
+    When I search for an item by name
+    Then I should only see items with that name
 
-  Scenario: A user wants to search for an item by neighborhood
-    When I search for "Fells Point"
-    Then I should see 2 items that match neighborhood "Fells Point"
+  Scenario: A user searches for an item by neighborhood
+    When I search for items by neighborhood
+    Then I should only see items in that neighborhood
 
-  Scenario: A user wants to search for an item by artist
-    When I search for "Jane Artist"
-    Then I should see 1 item that matches artist "Jane Artist"
+  Scenario: A user searches for an item by artist
+    When I search for items by artist name
+    Then I should only see items by that artist
+
+  Scenario: A users searches for an item that yields no results
+    When I search for items with "Something bogus"
+    Then I should see that there are no items found
