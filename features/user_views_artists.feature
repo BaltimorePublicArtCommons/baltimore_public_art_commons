@@ -1,13 +1,14 @@
-Feature: User views artists listing
-  Background:
-    Given the app has a few artists
-
-  Scenario: A user views the listing of artists
-    When I open the app
-    And I want to see a listing of the artists
-    Then I should see 12 or fewer artists
+Feature: User views artists
+  A user views artists to learn more about artists in the collection
 
   Scenario: A user views an artist
-    When I visit the artists page
-    And I want to see more information about the first artist
-    Then I should see information about the first artist
+    Given the app has a few artists
+    When I go to the artists page
+    And I want to see more information about an artist
+    Then I should see information about the artist
+
+  Scenario: A user views more artists
+    Given the app has many artists
+    When I go to the artists page
+    And I want to see more artists
+    Then I should see the next page of artists
