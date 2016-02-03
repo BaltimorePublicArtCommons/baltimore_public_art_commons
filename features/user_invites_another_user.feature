@@ -1,9 +1,7 @@
 Feature: User invites another user
+  A user invites other users so they can help administer the site
 
-  Background:
-    Given I am logged in as an "admin" user
-
-  Scenario: A user wants to invite another user
-    When I click the "Invite User" link
-    And I fill out the user invite form
-    Then I should see a success message
+  Scenario: A user invites another user
+    When I login
+    And I invite another user
+    Then I should see a message that the user has been invited
