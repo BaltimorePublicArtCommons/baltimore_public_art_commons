@@ -1,9 +1,9 @@
 Feature: User logs in
-  A user logs in to use accessible site management features
+  A user logs in to administer the site
 
   Scenario: A user logs in
     When I login
-    Then I should see that I'm logged in
+    Then I should be logged in
 
   Scenario: A user logs in with the wrong credentials
     When I login with bad credentials

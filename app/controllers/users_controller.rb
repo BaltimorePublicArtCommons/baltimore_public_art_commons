@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     user = User.find params[:id]
     user.update user_params
     flash[:notice] = "Success! Welcome to the Baltimore Public Art Commons Team!"
+    log_in(user)
     redirect_to root_path
   end
 

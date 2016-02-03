@@ -19,7 +19,7 @@ When(/^I login with bad credentials$/) do
   click_button 'Login'
 end
 
-Then(/^I should see that I'm logged in$/) do
+Then(/^I should be logged in$/) do
   expect(page).to have_content("Logged in as #{@user.first_name}")
 end
 
