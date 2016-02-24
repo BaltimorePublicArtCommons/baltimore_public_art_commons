@@ -15,7 +15,7 @@ module Wikipedia
         name = wiki_name a
         wiki_url = Addressable::URI.parse(source(a)).normalize.to_str
         begin
-          wiki_page = RestClient.get(wiki_url) { |response, request, result, &block|
+          wiki_page = RestClient::Request.execute(url: wiki_url, method: :get, verify_ssl: false) { |response, request, result, &block|
             case response.code
             when 200
               response
@@ -59,7 +59,7 @@ module Wikipedia
     end
 
     def wiki_base_url
-      'http://en.wikipedia.org/wiki/'
+      'https://en.wikipedia.org/wiki/'
     end
 
     def paragraph_regex
