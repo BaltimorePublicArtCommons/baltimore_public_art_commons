@@ -1,6 +1,6 @@
 module Wikipedia
   class WikipediaArtistFetcher
-    attr_accessor :found_count, :not_found_count, :ambiguous_count 
+    attr_accessor :found_count, :not_found_count, :ambiguous_count
 
     def initialize(output_style = "short")
       @style = output_style
